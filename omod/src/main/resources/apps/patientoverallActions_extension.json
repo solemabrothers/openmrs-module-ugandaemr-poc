@@ -1,0 +1,13 @@
+[
+    {
+        "id": "${project.parent.groupId}.${project.parent.artifactId}.queuePatient",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "ugandaemrpoc.task.addPatientToQueue.label",
+        "url": "ugandaemrpoc/addPatientToQue.page?patientId={{patient.uuid}}",
+        "icon": "icon-stethoscope",
+        "order": -20,
+        "require": "!patient.person.dead",
+        "requiredPrivilege": "Task: ugandaemrpoc.addPatientToQueue"
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "id": "ugandaemrpoc.referenceapplication.clinician.dashboard",
+        "extensions": [
+            {
+                "id": "ugandaemrpoc.referenceapplication.clinician.dashboard.homepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "ugandaemrpoc.app.clinician.dashboard.label",
+                "url": "ugandaemrpoc/clinicianDashboard.page?app=ugandaemr.findPatient",
+                "icon": "icon-stethoscope",
+                "order": 1
+            }
+        ]
+    }
+]
