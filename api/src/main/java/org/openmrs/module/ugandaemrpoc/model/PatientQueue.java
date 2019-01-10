@@ -5,9 +5,9 @@ import org.openmrs.Location;
 import org.openmrs.Patient;
 import org.openmrs.Provider;
 
-public class PatientQue extends BaseOpenmrsData {
+public class PatientQueue extends BaseOpenmrsData {
 	
-	private Integer patientQueId;
+	private Integer patientQueueId;
 	
 	private Patient patient;
 	
@@ -19,15 +19,15 @@ public class PatientQue extends BaseOpenmrsData {
 	
 	private String status;
 	
-	public PatientQue() {
+	public PatientQueue() {
 	}
 	
 	public Integer getId() {
-		return patientQueId;
+		return patientQueueId;
 	}
 	
 	public void setId(Integer integer) {
-		patientQueId = integer;
+		patientQueueId = integer;
 	}
 	
 	public Patient getPatient() {

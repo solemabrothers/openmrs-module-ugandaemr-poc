@@ -1160,7 +1160,6 @@
             </section>
         </restrictByRole>
 
-
             <restrictByRole exclude="MRA">
             <!--End of Lookup section-->
                 <section sectionTag="section" headerTag="h1">
@@ -1778,6 +1777,7 @@
                     </fieldset>
                 </section>
             </restrictByRole>
+
             <restrictByRole include="CLINICIAN,LAB TECHNICIAN">
                 <section>
                     <fieldset>

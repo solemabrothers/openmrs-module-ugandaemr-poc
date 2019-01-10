@@ -1,17 +1,18 @@
 package org.openmrs.module.ugandaemrpoc.fragment.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 import org.openmrs.Provider;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.appui.UiSessionContext;
 import org.openmrs.module.ugandaemrpoc.api.UgandaEMRPOCService;
-import org.openmrs.module.ugandaemrpoc.model.PatientQue;
+import org.openmrs.module.ugandaemrpoc.model.PatientQueue;
 import org.openmrs.ui.framework.SimpleObject;
 import org.openmrs.ui.framework.UiUtils;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class PatientQueueFragmentController {
 	
@@ -21,7 +22,7 @@ public class PatientQueueFragmentController {
 	public void controller() {
 	}
 	
-	public SimpleObject getPatientInQue(@RequestParam("providerId") Provider provider,
+	public SimpleObject getPatientInQueue(@RequestParam("providerId") Provider provider,
 	        @RequestParam("fromDate") Date fromDate, @RequestParam("toDate") Date toDate, UiUtils ui,
 	        UiSessionContext uiSessionContext) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -32,9 +33,9 @@ public class PatientQueueFragmentController {
 		
 		String toDateString = formatterExt.format(new Date()) + " 23:59:59";
 		
-		List<PatientQue> patientQueues = null;
+		List<PatientQueue> patientQueues = null;
 		try {
-			patientQueues = ((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).getPatientInQueList(
+			patientQueues = ((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).getPatientInQueueList(
 			    provider, formatter.parse(fromDateString), formatter.parse(toDateString),
 			    uiSessionContext.getSessionLocation());
 		}

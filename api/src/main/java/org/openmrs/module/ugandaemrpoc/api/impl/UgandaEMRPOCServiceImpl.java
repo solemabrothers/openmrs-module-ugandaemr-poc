@@ -6,7 +6,7 @@ import org.openmrs.api.APIException;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.ugandaemrpoc.api.UgandaEMRPOCService;
 import org.openmrs.module.ugandaemrpoc.api.db.UgandaEMRPOCDao;
-import org.openmrs.module.ugandaemrpoc.model.PatientQue;
+import org.openmrs.module.ugandaemrpoc.model.PatientQueue;
 
 import java.util.Date;
 import java.util.List;
@@ -22,16 +22,16 @@ public class UgandaEMRPOCServiceImpl extends BaseOpenmrsService implements Ugand
 		this.dao = dao;
 	}
 	
-	public PatientQue getPatientQueById(String id) throws APIException {
-		return dao.getPatientQueById(id);
+	public PatientQueue getPatientQueueById(String id) throws APIException {
+		return dao.getPatientQueueById(id);
 	}
 	
-	public PatientQue savePatientQue(PatientQue patientQue) throws APIException {
-		return dao.savePatientQue(patientQue);
+	public PatientQueue savePatientQue(PatientQueue patientQueue) throws APIException {
+		return dao.savePatientQueue(patientQueue);
 	}
 	
-	public List<PatientQue> getPatientInQueList(Provider provider, Date fromDate, Date toDate, Location sessionLocation)
+	public List<PatientQueue> getPatientInQueueList(Provider provider, Date fromDate, Date toDate, Location sessionLocation)
 	        throws APIException {
-		return dao.getPatientInQue(provider, fromDate, toDate, sessionLocation);
+		return dao.getPatientInQueue(provider, fromDate, toDate, sessionLocation);
 	}
 }

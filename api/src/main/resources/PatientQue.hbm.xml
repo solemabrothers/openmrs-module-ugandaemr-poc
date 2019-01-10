@@ -5,9 +5,9 @@
 
 <hibernate-mapping package="org.openmrs.module.ugandaemrpoc.model">
 
-	<class name="org.openmrs.module.ugandaemrpoc.model.PatientQue" table="patient_que">
+	<class name="PatientQueue" table="patient_queue">
 
-        <id name="id" type="int" column="patient_que_id" unsaved-value="0">
+        <id name="id" type="int" column="patient_queue_id" unsaved-value="0">
             <generator class="native" />
         </id>
 

@@ -13,7 +13,7 @@ import org.openmrs.module.appui.UiSessionContext;
 import org.openmrs.module.coreapps.fragment.controller.visit.QuickVisitFragmentController;
 import org.openmrs.module.emrapi.adt.AdtService;
 import org.openmrs.module.ugandaemrpoc.api.UgandaEMRPOCService;
-import org.openmrs.module.ugandaemrpoc.model.PatientQue;
+import org.openmrs.module.ugandaemrpoc.model.PatientQueue;
 import org.openmrs.ui.framework.SimpleObject;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.annotation.SpringBean;
@@ -23,11 +23,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-public class AddPatientToQuePageController {
+public class AddPatientToQueuePageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	public AddPatientToQuePageController() {
+	public AddPatientToQueuePageController() {
 	}
 	
 	public void get(@SpringBean PageModel pageModel,
@@ -50,16 +50,16 @@ public class AddPatientToQuePageController {
 	        @RequestParam("locationId") Location location,
 	        @RequestParam(value = "returnUrl", required = false) String returnUrl, UiSessionContext uiSessionContext,
 	        UiUtils uiUtils, HttpServletRequest request) {
-		PatientQue patientQue = new PatientQue();
+		PatientQueue patientQueue = new PatientQueue();
 		
-		patientQue.setLocationFrom(uiSessionContext.getSessionLocation());
-		patientQue.setPatient(patient);
-		patientQue.setLocationTo(location);
-		patientQue.setProvider(provider);
-		patientQue.setStatus("pending");
-		patientQue.setCreator(uiSessionContext.getCurrentUser());
-		patientQue.setDateCreated(new Date());
-		((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).savePatientQue(patientQue);
+		patientQueue.setLocationFrom(uiSessionContext.getSessionLocation());
+		patientQueue.setPatient(patient);
+		patientQueue.setLocationTo(location);
+		patientQueue.setProvider(provider);
+		patientQueue.setStatus("pending");
+		patientQueue.setCreator(uiSessionContext.getCurrentUser());
+		patientQueue.setDateCreated(new Date());
+		((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).savePatientQue(patientQueue);
 		
 		if (Context.getVisitService().getActiveVisitsByPatient(patient).size() <= 0) {
 			QuickVisitFragmentController quickVisitFragmentController = new QuickVisitFragmentController();

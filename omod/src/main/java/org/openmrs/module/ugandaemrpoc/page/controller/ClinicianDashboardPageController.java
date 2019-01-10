@@ -5,7 +5,7 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.appframework.domain.AppDescriptor;
 import org.openmrs.module.appui.UiSessionContext;
 import org.openmrs.module.ugandaemrpoc.api.UgandaEMRPOCService;
-import org.openmrs.module.ugandaemrpoc.model.PatientQue;
+import org.openmrs.module.ugandaemrpoc.model.PatientQueue;
 import org.openmrs.notification.Alert;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.annotation.SpringBean;
@@ -33,9 +33,9 @@ public class ClinicianDashboardPageController {
 	        UiUtils ui) {
 		List<Alert> alerts = new ArrayList();
 		alerts = Context.getAlertService().getAllActiveAlerts(sessionContext.getCurrentUser());
-		List<PatientQue> patientQueList = new ArrayList();
+		List<PatientQueue> patientQueueList = new ArrayList();
 		try {
-			patientQueList = ((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).getPatientInQueList(
+			patientQueueList = ((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).getPatientInQueueList(
 			    sessionContext.getCurrentProvider(), dateFormtter(new Date(), "00:00:00"),
 			    dateFormtter(new Date(), "23:59:59"), sessionContext.getSessionLocation());
 		}
@@ -43,7 +43,7 @@ public class ClinicianDashboardPageController {
 			e.printStackTrace();
 		}
 		
-		pageModel.put("patientQueList", patientQueList);
+		pageModel.put("patientQueueList", patientQueueList);
 		pageModel.put("alerts", alerts);
 		
 		model.addAttribute("afterSelectedUrl", app.getConfig().get("afterSelectedUrl").getTextValue());

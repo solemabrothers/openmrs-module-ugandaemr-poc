@@ -93,8 +93,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <% if (patientQueList != null) {
-                        patientQueList.each {
+                    <% if (patientQueueList != null) {
+                        patientQueueList.each {
                     %>
                     <tr>
                         <td>${it.patient.id}</td>
@@ -106,9 +106,9 @@
                             <i class="icon-dashboard view-action" title="Goto Patient's Dashboard"
                                onclick="location.href = '${ui.pageLink("coreapps",'clinicianfacing/patient',[patientId: it.patient.patientId])}'"></i>
                             <i class="icon-exchange edit-action" title="Transfer To Another Provider"
-                               onclick="location.href = '${ui.pageLink("ugandaemrpoc",'addPatientToQue',[patientId: it.patient.patientId,])}'"></i>
+                               onclick="location.href = '${ui.pageLink("ugandaemrpoc",'addPatientToQueue',[patientId: it.patient.patientId,])}'"></i>
                             <i class="icon-envelope view-action" title="Patient Note"
-                               onclick="location.href = '${ui.pageLink("ugandaemrpoc",'addPatientToQue',[patientId: it.patient.patientId])}'"><span
+                               onclick="location.href = '${ui.pageLink("ugandaemrpoc",'addPatientToQueue',[patientId: it.patient.patientId])}'"><span
                                     style="color: red">1</span></i>
                         </td>
                     </tr>

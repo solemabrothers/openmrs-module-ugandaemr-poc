@@ -1,5 +1,5 @@
 <%
-    ui.includeJavascript("coreapps", "custom/addPatientToQue.js")
+    ui.includeJavascript("coreapps", "custom/addPatientToQueue.js")
     ui.decorateWith("appui", "standardEmrPage", [title: ui.message("ugandaemrpoc.task.addPatientToQueue.label")])
 
     def htmlSafeId = { extension ->

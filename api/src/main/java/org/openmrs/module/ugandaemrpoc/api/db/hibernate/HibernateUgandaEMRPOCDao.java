@@ -10,7 +10,7 @@ import org.openmrs.Location;
 import org.openmrs.Patient;
 import org.openmrs.Provider;
 import org.openmrs.module.ugandaemrpoc.api.db.UgandaEMRPOCDao;
-import org.openmrs.module.ugandaemrpoc.model.PatientQue;
+import org.openmrs.module.ugandaemrpoc.model.PatientQueue;
 
 import java.lang.reflect.Method;
 import java.util.Date;
@@ -33,21 +33,21 @@ public class HibernateUgandaEMRPOCDao implements UgandaEMRPOCDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public PatientQue getPatientQueById(String id) {
-		return (PatientQue) getCurrentSession().createCriteria(PatientQue.class).add(Restrictions.eq("uuid", id))
+	public PatientQueue getPatientQueueById(String id) {
+		return (PatientQueue) getCurrentSession().createCriteria(PatientQueue.class).add(Restrictions.eq("uuid", id))
 		        .uniqueResult();
 	}
 	
-	public List<PatientQue> getPatientQueByPatient(Patient patient) {
-		Criteria criteria = getCurrentSession().createCriteria(PatientQue.class);
+	public List<PatientQueue> getPatientQueueByPatient(Patient patient) {
+		Criteria criteria = getCurrentSession().createCriteria(PatientQueue.class);
 		criteria.add(Restrictions.eq("patient", patient));
 		return criteria.list();
 	}
 	
-	public PatientQue savePatientQue(PatientQue patientQue) {
+	public PatientQueue savePatientQueue(PatientQueue patientQueue) {
 		try {
-			getCurrentSession().saveOrUpdate(patientQue);
-			return patientQue;
+			getCurrentSession().saveOrUpdate(patientQueue);
+			return patientQueue;
 		}
 		catch (Exception e) {
 			log.error(e);
@@ -55,8 +55,8 @@ public class HibernateUgandaEMRPOCDao implements UgandaEMRPOCDao {
 		return null;
 	}
 	
-	public List<PatientQue> getPatientInQue(Provider provider, Date fromDate, Date toDate, Location sessionLocation) {
-		Criteria criteria = getCurrentSession().createCriteria(PatientQue.class);
+	public List<PatientQueue> getPatientInQueue(Provider provider, Date fromDate, Date toDate, Location sessionLocation) {
+		Criteria criteria = getCurrentSession().createCriteria(PatientQueue.class);
 		criteria.add(Restrictions.between("dateCreated", fromDate, toDate));
 		criteria.add(Restrictions.eq("provider", provider));
 		criteria.add(Restrictions.eq("locationTo", sessionLocation));
