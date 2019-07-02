@@ -32,7 +32,7 @@ public class ClinicianDashboardPageController {
 	        @RequestParam(value = "toDate", required = false) Date toDate, UiSessionContext sessionContext, PageModel model,
 	        UiUtils ui) {
 		List<Alert> alerts = new ArrayList();
-		alerts = Context.getAlertService().getAllActiveAlerts(sessionContext.getCurrentUser());
+		alerts = Context.getAlertService().getAlertsByUser(sessionContext.getCurrentUser());
 		List<PatientQueue> patientQueueList = new ArrayList();
 		try {
 			patientQueueList = ((UgandaEMRPOCService) Context.getService(UgandaEMRPOCService.class)).getPatientInQueueList(
@@ -45,6 +45,7 @@ public class ClinicianDashboardPageController {
 		
 		pageModel.put("patientQueueList", patientQueueList);
 		pageModel.put("alerts", alerts);
+		pageModel.put("providerList", Context.getProviderService().getAllProviders(false));
 		
 		model.addAttribute("afterSelectedUrl", app.getConfig().get("afterSelectedUrl").getTextValue());
 		model.addAttribute("heading", app.getConfig().get("heading").getTextValue());
@@ -62,5 +63,13 @@ public class ClinicianDashboardPageController {
 		String formattedDate = formatterExt.format(date) + " " + time;
 		
 		return formatter.parse(formattedDate);
+	}
+	
+	public void markAlertAsRead(String alertId) {
+		Alert alert = Context.getAlertService().getAlert(Integer.valueOf(alertId));
+		if (alert != null) {
+			alert.markAlertRead();
+			Context.getAlertService().saveAlert(alert);
+		}
 	}
 }

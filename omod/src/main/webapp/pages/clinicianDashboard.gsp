@@ -6,24 +6,33 @@
     ui.includeJavascript("uicommons", "bootstrap-transition.js")
     ui.includeCss("uicommons", "styleguide/index.styles")
     ui.includeCss("uicommons", "datatables/dataTables_jui.styles")
+    ui.includeJavascript("ugandaemrpoc", "patientqueue.js")
 
 %>
 <script type="text/javascript">
+
+    jq(document).ready(function () {
+
+        jq("#okay").click(function () {
+            patientqueue.createReadMessageDialog();
+        });
+    });
+
     <% if (breadcrumbs) { %>
     var breadcrumbs = ${ breadcrumbs };
     <% } else { %>
     var breadcrumbs = [
-        { icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm' },
-        { label: "${ ui.message(label)}"}
+        {icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm'},
+        {label: "${ ui.message(label)}"}
     ];
     <% } %>
-    jq(function() {
+    jq(function () {
         jq('#patient-search').focus();
     });
 </script>
 
 <h2>
-    ${ ui.message(heading) }
+    ${ui.message(heading)}
 </h2>
 <script type="text/javascript">
 
@@ -67,10 +76,7 @@
             <div class="info-header">
                 <i class="icon-diagnosis"></i>
 
-                <h3 style="width: 50%">PATIENTS IN QUEUE</h3> <span
-                    style="right:auto;width: 40%;font-weight: bold"><input name="includeInSystem"
-                                                                           type="checkbox"> Include Patients In System
-            </span></h4>
+                <h3 style="width: 50%">PATIENTS IN QUEUE</h3> <span style="right:auto;width: 40%;font-weight: bold"><i class=" icon-plus-sign-alt"> Add Sync Task Type</i></span>
             </div>
             <span>
                 <form method="get" id="patient-search-form" onsubmit="return false">
@@ -122,12 +128,76 @@
 
     <div class="alert-container column">
         <div class="action-section">
-            <h3 style="color: black; text-align: center;"><span style="color: red">${alerts.size()}</span> Messages</h3>
+            <h3 style="text-align: center; color: black"><span style="color: red;">${alerts.size()}</span> Messages</h3>
             <ul style="max-height: 200px; overflow: scroll;">
                 <% alerts.each { %>
-                <li><a href=""><i class="icon-comment"></i>${it.text.take(40)}</a></li>
+                <li><a onclick='patientqueue.showReadMessageDialog("${it.text}", "${it.alertId}")'><i
+                        class="icon-comment"></i>${it.text.take(40)}</a></li>
                 <% } %>
             </ul>
+        </div>
+    </div>
+</div>
+
+<div id="read_message" class="dialog" style="display: none">
+    <div class="dialog-header">
+        <i class="icon-remove-sign"></i>
+
+        <h3>Message From</h3>
+    </div>
+
+    <div>
+        <p id="message" class="center" style="text-align: center;font-weight: bolder">
+            Message Here
+        </p>
+        <input type="hidden" id="message_id" name="message_id">
+
+        <div class="dialog-content form">
+            <button class="cancel" id="">Close</button> <button class="confirm" id="okay">OK</button>
+        </div>
+    </div>
+</div>
+
+<div id="create_message" class="dialog" style="display: none">
+    <div class="dialog-header">
+        <i class="icon-remove-sign"></i>
+
+        <h3>Compose Message</h3>
+    </div>
+
+    <div>
+        pan>
+        <p>
+            <span>
+                <label for="provider_new_message">
+                    <span>${ui.message("ugandaemrpoc.provider.label")}</span>
+                </label>
+                <select name="providerId" id="provider_new_message">
+                    <option value="">${ui.message("ugandaemrpoc.provider.selectTitle")}</option>
+                    <% if (providerList != null) {
+                        providerList.each {
+                            if (it.getName() != null) {
+                    %>
+
+                    <option value="${it.providerId}">${it.getName()}</option>
+                    <% }
+                    }
+                    }
+                    %>
+                </select>
+                <span class="field-error" style="display: none;"></span>
+                <% if (providerList == null) { %>
+                <div><${ui.message("ugandaemrpoc.select.error")}</div>
+                <% } %>
+            </span>
+        </p>
+
+        <p>
+            <textarea name="message" id="message_to"></textarea>
+        </p>
+
+        <div class="dialog-content form">
+            <button class="cancel" id="">Close</button> <button class="confirm" id="okay">OK</button>
         </div>
     </div>
 </div>

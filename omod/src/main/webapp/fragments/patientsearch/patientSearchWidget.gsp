@@ -3,7 +3,6 @@
     def breadcrumbOverride = config.breadcrumbOverride ?: ""
     ui.includeCss("uicommons", "datatables/dataTables_jui.css")
     ui.includeCss("ugandaemrpoc", "patientsearch/patientSearchWidget.css")
-    ui.includeCss("ugandaemrpoc", "patientsearch/fontcustom_findpatient_fingerprint.css")
     ui.includeJavascript("uicommons", "datatables/jquery.dataTables.min.js")
     ui.includeJavascript("ugandaemrpoc", "patientsearch/patientSearchWidget.js")
     ui.includeJavascript("uicommons", "moment-with-locales.min.js")

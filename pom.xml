@@ -32,16 +32,19 @@
 		<openMRSVersion>2.0.6</openMRSVersion>
 
 		<!-- modules -->
+		<adminuiVersion>1.2.4</adminuiVersion>
 		<appframeworkVersion>2.10.0</appframeworkVersion>
-		<appuiVersion>1.8.0</appuiVersion>
+		<appuiVersion>1.9.0</appuiVersion>
 		<coreappsVersion>1.20.0-SNAPSHOT</coreappsVersion>
 		<dataexchangeVersion>1.3.2</dataexchangeVersion>
 		<emrapiVersion>1.26.0</emrapiVersion>
 		<legacyuiVersion>1.3.3</legacyuiVersion>
+		<locationbasedaccessVersion>0.1.1</locationbasedaccessVersion>
 		<metadatadeployVersion>1.9.0</metadatadeployVersion>
 		<ugandaemrVersion>2.1.0-SNAPSHOT</ugandaemrVersion>
 		<uiframeworkVersion>3.13.0</uiframeworkVersion>
-
+		<patientlistVersion>1.0.0</patientlistVersion>
+		<openhmiscommonsVersion>3.0.0</openhmiscommonsVersion>
 	</properties>
 
 	<dependencyManagement>
@@ -125,8 +128,21 @@
 
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
+				<artifactId>locationbasedaccess</artifactId>
+				<version>${locationbasedaccessVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
 				<artifactId>metadatadeploy-api</artifactId>
 				<version>${metadatadeployVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>patientlist</artifactId>
+				<version>${patientlistVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 
