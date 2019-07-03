@@ -34,17 +34,6 @@
                     <property name="transactionManager">
                         <ref bean="transactionManager" />
                     </property>
-                    <property name="target">
-                        <bean class="org.openmrs.module.ugandaemrpoc.api.impl.UgandaEMRPOCServiceImpl">
-                            <property name="dao">
-                                <bean class="org.openmrs.module.ugandaemrpoc.api.db.hibernate.HibernateUgandaEMRPOCDao">
-                                    <property name="sessionFactory">
-                                        <ref bean="sessionFactory" />
-                                    </property>
-                                </bean>
-                            </property>
-                        </bean>
-                    </property>
                     <property name="transactionAttributeSource">
                         <bean class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
                     </property>
