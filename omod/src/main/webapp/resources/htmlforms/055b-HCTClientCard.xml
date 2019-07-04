@@ -11,169 +11,6 @@
           formDisplayStyle="Standard"
           formLabel="HCT Client Card">
 
-    <style>
-
-        form label, .form label {
-        float: left;
-        padding: 0px 10px 0 0;
-        }
-
-        form input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
-        margin: 10px 15px;
-        }
-
-        table td {
-        background: #FFFFFF;
-        color: #404040;
-        }
-
-        form select, .form select {
-        min-width: 0px;
-        }
-
-        form input, form select, form textarea, form ul.select, .form input, .form select, .form textarea, .form
-        ul.select {
-        background-color: #FBFBFB;
-        border: 1px solid #CEC9C9;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        padding: 10px;
-        min-width: 20%;
-        }
-
-        .row {
-        width: 100%;
-        float: left;
-        display: inline-flex;
-        clear: both;
-        }
-
-        .row .row-col2 {
-        float: left;
-        width: 50%;
-        }
-
-        table th, table td {
-        border: 1px solid #AFAFAF;
-        }
-    </style>
-
-
-    <script type="text/javascript">
-        function enable_disable(field, class_name_prefix, conditions, input_type) {
-
-        var class_name = jq(field).attr("class");
-
-        var length = class_name.length;
-
-        var class_id = parseInt(class_name.substring(length - 1, length));
-        var childClass = "Child" + class_id;
-
-        var disable = true;
-        var requires = true;
-
-        var row = '[class^="' + class_name_prefix + '"][class*="' + childClass + '"]';
-
-        var selected_value = null;
-
-        if (input_type == "select") {
-        selected_value = jq(field).find(":selected").text().trim().toLowerCase();
-        }
-        else if (input_type == "hidden") {
-        selected_value = jq(field).find("input[type=hidden]").val().trim().toLowerCase();
-        }
-
-
-        if (eval(conditions)) {
-        disable = false;
-        }
-
-
-        jq(row).each(function () {
-        var group = jq(this);
-
-        if (class_name.indexOf('Child') == -1) {
-        /*group.find("input").attr("value", ""); */
-        /* group.find('select').prop("selectedIndex", 0);*/
-        group.find("input").attr("disabled", disable);
-        group.find('select').attr("disabled", disable);
-
-        if (disable) {
-        /* fade out the fields that are disabled */
-        group.find("input").fadeTo(250, 0.25);
-        group.find("select").fadeTo(250, 0.25);
-        } else {
-        /* remove the fade on the fields */
-        group.find("input").fadeTo(250, 1);
-        group.find("select").fadeTo(250, 1);
-        }
-        }
-        });
-        }
-
-        if (jQuery) {
-        $(document).ready(function () {
-        if ($.browser.msie) {
-        $(":checkbox").click(function () {
-        $(this).change();
-        });
-        }
-
-        //Block Multiple encounter entry on same date
-        blockEncounterOnSameDateEncounter(jq("#encounterDate").find("input[type=hidden]"),"block");
-
-        jq('[class^="PreTestCounselingEnableDisable"]').change(function () {
-        enable_disable(jq(this), "PreTestCounseling", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="PreTestCounselingEnableDisable"]').each(function () {
-        enable_disable(jq(this), "PreTestCounseling", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="TestedBeforeEnableDisable"]').change(function () {
-        enable_disable(jq(this), "TestedBefore", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="TestedBeforeEnableDisable"]').each(function () {
-        enable_disable(jq(this), "TestedBefore", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="PartnerTestedBeforeEnableDisable"]').change(function () {
-        enable_disable(jq(this), "PartnerTestedBefore", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="PartnerTestedBeforeEnableDisable"]').each(function () {
-        enable_disable(jq(this), "PartnerTestedBefore", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="CounseledAsCoupleEnableDisable"]').change(function () {
-        enable_disable(jq(this), "CounseledAsCouple", 'selected_value != "individual" &amp; selected_value != ""', "select");
-
-        enable_disable(jq(".ResultAsCoupleEnableDisable1"), "ResultAsCouple", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="CounseledAsCoupleEnableDisable"]').each(function () {
-        enable_disable(jq(this), "CounseledAsCouple", 'selected_value != "individual" &amp; selected_value != ""', "select");
-        });
-
-        jq('[class^="ResultAsCoupleEnableDisable"]').change(function () {
-        enable_disable(jq(this), "ResultAsCouple", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="ResultAsCoupleEnableDisable"]').each(function () {
-        enable_disable(jq(this), "ResultAsCouple", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="LinkedToCareEnableDisable"]').change(function () {
-        enable_disable(jq(this), "LinkedToCare", 'selected_value == "yes"', "select");
-        });
-
-        jq('[class^="LinkedToCareEnableDisable"]').each(function () {
-        enable_disable(jq(this), "LinkedToCare", 'selected_value == "yes"', "select");
-        });
-        });
-        }
-    </script>
     <div class="ai-page-frame">
         <div class="headers" style="text-align: center;">
             <h3 style="background: #FFFF7D; padding: 10px;">HCT Client Card</h3>
@@ -211,8 +48,8 @@
                             <td colspan="4">
 
                                 <label>Accompanied by:</label>
-                                <obs conceptId="99457" answerConceptIds="970,971,99363"
-                                     answerLabels="Mother,Father, Guardian"/>
+                                <obs conceptId="969" answerConceptIds="970,971,165154,99363"
+                                     answerLabels="Mother,Father,Both Parents, Guardian"/>
                             </td>
                         </tr>
                     </includeIf>
@@ -256,9 +93,8 @@
                         <td colspan="3">
                             <span id="checkboxRadio">
                                 <obs conceptId="162925"
-                                     answerConceptIds="160542,165047,165048,99593,164983,160456,164984,99619"
+                                     answerConceptIds="160542,165047,165048,165156,99593,164983,160456,165046,164984,165155,90015"
                                      answerLabels="OPD,Ward,ART Clinic,TB clinic,Nutrition unit,Young Child Clinic (YCC),ANC,Maternity,PNC,Family Planning,SMC,STI Clinic"/>
-                                <!--                                 Missing concepts in this list 2.Ward 5. Nutrition Unit, 9PNC, STI Clinic-->
                             </span>
                         </td>
                     </tr>
@@ -270,10 +106,9 @@
                         </td>
                         <td colspan="3">
                             <span id="checkboxRadio">
-                                <obs conceptId="162925"
-                                     answerConceptIds="99460,165047,162920,99456"
+                                <obs conceptId="165160"
+                                     answerConceptIds="99460,165157,162920,162895,165158,165159"
                                      answerLabels="Home Based,Hotspot,Workplace,Outreach,Drop in Centre (DIC)"/>
-                                <!--                                 Missing concepts in this list 2.Hotspot 5.Drop In Centre,-->
                             </span>
                         </td>
                     </tr>
@@ -285,10 +120,9 @@
                         </td>
                         <td colspan="3">
                             <span id="checkboxRadio">
-                                <obs conceptId="162925"
-                                     answerConceptIds="99056,90012"
+                                <obs conceptId="165168"
+                                     answerConceptIds="165161,165162,165163,99056,165164,165165,165166,90012,165167"
                                      answerLabels="Assisted Partner Notification (APN),Index Client Testing other than APN,PrEP,PEP,HIV Self -Test Positive,Inconclusive HIV result,Self-initiative"/>
-                                <!--                                 Missing concepts in this list 1,2,3,5,6,7 5.Drop In Centre,-->
 
                             </span>
                         </td>
@@ -322,11 +156,9 @@
                         </td>
                         <td colspan="3">
                             <span id="checkboxRadio">
-                                <obs conceptId="162925"
-                                     answerConceptIds="162277,90012,,160666,165125,165126,162198,159674,90041,5632,165132"
+                                <obs conceptId="165169"
+                                     answerConceptIds="162277,160666,165125,165126,162198,159674,165127,90041,99601,165132,162558"
                                      answerLabels="Prisoners,PWIDs,Uniformed men,Migrant workers,Truckers,Fisher Folks,Refugees,Pregnant,Breastfeeding,AGYW,People with Disabilities (PWD)"/>
-                                <!--                                 Missing concepts in this list 7,11-->
-
                             </span>
                         </td>
                     </tr>
@@ -340,6 +172,17 @@
                             <obs id="br" conceptId="99464" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>
+                            <label>Last HIV Vist Date:</label>
+
+                        </td>
+                        <td colspan="3" class="TestedBeforeEnableDisable1">
+                            <obs id="br" conceptId="165170"/>
+                        </td>
+                    </tr>
+
 
                     <tr>
                         <td>
@@ -423,12 +266,15 @@
 
                     <tr>
                         <td><label>HIV final test results:</label>
-                            <obs conceptId="99493" answerConceptIds="90167,90166,162926,162927"
-                                 answerLabels="NEG,POS,INC,NT"/>
+                            <obs conceptId="99493" answerConceptIds="90167,90166,162926"
+                                 answerLabels="NEG,POS,INC"/>
                         </td>
-                        <td>
-                            <label>Sent to EQA or Confirmatory Laboratory</label>
-                            <obs conceptId="162928" answerConceptIds="90004,90003" answerLabels="Yes,No"/>
+                    </tr>
+
+                    <tr>
+                        <td><label>HIV final Syphillis-Duo results:</label>
+                            <obs conceptId="99493" answerConceptIds="90167,90166,162926"
+                                 answerLabels="NEG,POS,INC"/>
                         </td>
                     </tr>
 
@@ -482,7 +328,7 @@
 
                     <tr>
                         <td colspan="2"><label>Prevention Services Recieved:</label>
-                            <obs conceptId="99411" answerConceptIds="90083,99056" answerLabels="Prevention Information,Condoms,STI Screaning, STI treatment,Post-GBV,PEP,PREP,"/>
+                            <obs conceptId="99411" answerConceptIds="90083,99056" answerLabels="Prevention Information,Condoms,STI Screaning, STI treatment,Post-GBV,PEP,PREP"/>
                         </td>
                     </tr>
 
@@ -509,3 +355,5 @@
         </section>
     </div>
 </htmlform>
+
+<!--        /Users/ssolomon/IdeaProjects/METSPROJECTS/openmrs-module-ugandaemr-poc/omod/src/main/resources/htmlforms/055b-HCTClientCard.xml-->
