@@ -67,11 +67,9 @@
                             <label>HTS Delivery Model:</label>
                         </td>
                         <td colspan="3">
-                            <span id="checkboxRadio">
-                                <obs conceptId="162925"
-                                     answerConceptIds="99416,162921"
-                                     answerLabels="Facility based,Community"/>
-                            </span>
+                                <obs id="br" conceptId="162925" answerConceptIds="99416,162921" answerLabels="Facility based,Community"
+                                     style="radio"/>
+
                         </td>
                     </tr>
 
@@ -81,44 +79,41 @@
 
                         </td>
                         <td colspan="3">
-                            <obs conceptId="99462" answerConceptIds="162919,99459" answerLabels="CICT, PITC"/>
+                            <obs id="br" conceptId="99462" answerConceptIds="162919,99459" answerLabels="CICT,PITC" style="radio"/>
                         </td>
                     </tr>
+
 
                     <tr>
                         <td>
                             <label> Entry Point For Health Facility Testing:</label>
-
                         </td>
-                        <td colspan="3">
+                    <td>
                             <span id="checkboxRadio">
                                 <obs conceptId="162925"
                                      answerConceptIds="160542,165047,165048,165156,99593,164983,160456,165046,164984,165155,90015"
-                                     answerLabels="OPD,Ward,ART Clinic,TB clinic,Nutrition unit,Young Child Clinic (YCC),ANC,Maternity,PNC,Family Planning,SMC,STI Clinic"/>
+                                     answerLabels="1-OPD,2-Ward,3-ART Clinic,4-TB Clinic,5-Nutrition unit,5-Young Child Clinic (YCC),6-ANC,7-Maternity,8-PNC,9-Family Planning,10-SMC,11-STI Clinic"/>
                             </span>
                         </td>
                     </tr>
-
                     <tr>
                         <td>
-                            <label> Entry Point For Community Testing:</label>
-
+                            <label> Entry Point For Community Health Testing:<br/></label>
                         </td>
-                        <td colspan="3">
+                        <td>
                             <span id="checkboxRadio">
                                 <obs conceptId="165160"
                                      answerConceptIds="99460,165157,162920,162895,165158,165159"
                                      answerLabels="Home Based,Hotspot,Workplace,Outreach,Drop in Centre (DIC)"/>
                             </span>
                         </td>
-                    </tr>
 
+                    </tr>
                     <tr>
                         <td>
-                            <label>Reason for Testing</label>
-
+                            <label>Reason for Testing:</label>
                         </td>
-                        <td colspan="3">
+                        <td>
                             <span id="checkboxRadio">
                                 <obs conceptId="165168"
                                      answerConceptIds="165161,165162,165163,99056,165164,165165,165166,90012,165167"
@@ -131,19 +126,19 @@
                 </tbody>
             </table>
         </section>
-        <section>
-            <h3>Consent for testing (Parent/Guardian if child)</h3>
-            <table class="section-b">
-                <tbody>
-                    <tr>
-                        <td>
-                            <label>Do you agree to have his/her blood drawn for testing?</label>
-                            <obs id="br" conceptId="99481" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+<!--        <section>-->
+<!--            <h3>Consent for testing (Parent/Guardian if child)</h3>-->
+<!--            <table class="section-b">-->
+<!--                <tbody>-->
+<!--                    <tr>-->
+<!--                        <td>-->
+<!--                            <label>Do you agree to have his/her blood drawn for testing?</label>-->
+<!--                            <obs id="br" conceptId="99481" answerConceptIds="1065,1066" answerLabels="Yes,No"/>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </section>-->
         <section>
             <h3>SECTION C: HIV RISK ASSESSMENT</h3>
             <table class="section-b">
@@ -169,7 +164,7 @@
 
                         </td>
                         <td colspan="3" class="TestedBeforeEnableDisable1">
-                            <obs id="br" conceptId="99464" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
+                            <obs id="br" conceptId="99464" answerConceptIds="1065,1066" answerLabels="YES,NO" style="radio"/>
                         </td>
                     </tr>
 
@@ -179,7 +174,7 @@
 
                         </td>
                         <td colspan="3" class="TestedBeforeEnableDisable1">
-                            <obs id="br" conceptId="165170"/>
+                            <obs id="br" conceptId="164400"/>
                         </td>
                     </tr>
 
@@ -190,7 +185,7 @@
 
                         </td>
                         <td colspan="3" class="TestedBeforeEnableDisable1">
-                            <obs id="br" conceptId="99493" answerConceptIds="90166,90167" answerLabels="Postive,Negative"/>
+                            <obs id="br" conceptId="99493" answerConceptIds="90166,90167" answerLabels="Postive ,Negative" style="radio"/>
                         </td>
                     </tr>
                     <tr>
@@ -218,8 +213,8 @@
                                 <label>Has your spouse /partner been tested for HIV before? :</label>
                             </td>
                             <td colspan="3" class="PartnerTestedBeforeEnableDisable1">
-                                <obs id="br" conceptId="99472" answerConceptIds="1065,1066,99480"
-                                     answerLabels="Yes,No,Don't Know"/>
+                                <obs id="br" conceptId="99472" answerConceptIds="1065,1066,99480" answerLabels="Yes,No,Don't Know" style="radio"/>
+
                             </td>
                         </tr>
                     </excludeIf>
@@ -240,7 +235,7 @@
                             <label>Pre -Test Counseling done/information given:</label>
                         </td>
                         <td colspan="3" class="PreTestCounselingEnableDisable1">
-                            <obs conceptId="162918" answerConceptIds="90003, 90004" answerLabels="Yes, No"/>
+                            <obs id="br" conceptId="162918" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"/>
                         </td>
                     </tr>
                     <tr>
@@ -260,52 +255,58 @@
 
         <section>
             <h3>SECTION D:HIV TEST RESULTS</h3>
-
             <table class="section-b">
                 <tbody>
-
                     <tr>
-                        <td><label>HIV final test results:</label>
-                            <obs conceptId="99493" answerConceptIds="90167,90166,162926"
-                                 answerLabels="NEG,POS,INC"/>
+                        <td style="width: 20%"><label>HIV final test results:</label>
+                        </td>
+                        <td>
+                            <obs id="br" conceptId="99493" answerConceptIds="90167,90166,162926" answerLabels="NEG,POS,INC" style="radio"/>
                         </td>
                     </tr>
 
                     <tr>
                         <td><label>HIV final Syphillis-Duo results:</label>
-                            <obs conceptId="99493" answerConceptIds="90167,90166,162926"
-                                 answerLabels="NEG,POS,INC"/>
+                        </td>
+                        <td>
+                            <obs id="br" conceptId="99493" answerConceptIds="90167,90166,162926" answerLabels="NEG,POS,INC" style="radio"/>
+                        </td>
+                    </tr>
+
+<!--                    <includeIf velocityTest="$fn.globalProperty('ugandaemr.hts.recency') == true">-->
+<!--                        <tr>-->
+<!--                            <td colspan="2"><label>HIV Recency Test Result:</label>-->
+<!--                                <obs conceptId="141520" answerConceptIds="141518,141519,163611,165145,1118" answerLabels="Recent,Long Term,Invalid,Missing,Not Done"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </includeIf>-->
+
+                    <tr>
+                        <td><label>Finger Print Captured:</label></td>
+                        <td>
+                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><label>Result of Recent Infection Testing:</label>
-                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Long Term,Recent"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><label>Finger Print Captured:</label>
-                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><label>Results Recieved as Individual:</label>
-                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
+                        <td><label>Results Recieved as Individual:</label></td>
+                        <td>
+                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
                         </td>
                     </tr>
                     <excludeIf velocityTest="$patient.age &lt; 9">
                         <tr>
-                            <td class="ResultAsCoupleEnableDisable1" colspan="2"><label>Results received as a
-                                couple:</label>
+                            <td class="ResultAsCoupleEnableDisable1"><label>Results received as a
+                                couple:</label></td>
+                            <td>
                                 <span class="CounseledAsCoupleEnableDisableChild1">
                                     <obs conceptId="99494" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
                                 </span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="CounseledAsCoupleEnableDisableChild1" colspan="2"><label>Couple results:</label>
+                            <td class="CounseledAsCoupleEnableDisableChild1"><label>Couple results:</label></td>
+                            <td>
                                 <span class="ResultAsCoupleEnableDisableChild1">
                                     <obs conceptId="99497" answerConceptIds="6096,99496" answerLabels="Discordant,Concordant"/>
                                 </span>
@@ -314,27 +315,30 @@
                     </excludeIf>
 
                     <tr>
-                        <td colspan="2"><label>Is there suspision for TB<br/>(Currentcough,fever,weightloss and
-                            nightsweats):</label>
+                        <td><label>Is there suspision for TB<br/>(Currentcough,fever,weightloss and
+                            nightsweats):</label></td>
+                        <td>
                             <obs conceptId="99498" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><label>Presumptive TB Case reffered for TB Services:</label>
-                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
+                        <td><label>Presumptive TB Case reffered for TB Services:</label></td>
+                        <td>
+                            <obs conceptId="99411" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><label>Prevention Services Recieved:</label>
-                            <obs conceptId="99411" answerConceptIds="90083,99056" answerLabels="Prevention Information,Condoms,STI Screaning, STI treatment,Post-GBV,PEP,PREP"/>
+                        <td><label>Prevention Services Recieved:</label></td>
+                        <td>
+                            <obs conceptId="99411" answerConceptIds="90083,99056,165163" answerLabels="1-Prevention Information,2-Condoms,3-STI Screaning, 4-STI treatment,5-Post-GBV,6-PEP,7-PREP"/>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="LinkedToCareEnableDisable1"><label>Has client been linked to care or any other services?:</label>
-                            <obs conceptId="162982" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
+                            <obs conceptId="162982" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
                         </td>
                         <td class="LinkedToCareEnableDisableChild1"><label>Where?:
                             <obs conceptId="90200"/>

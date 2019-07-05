@@ -31,8 +31,8 @@
 				<bean class="org.openmrs.ui.framework.resource.Resource">
 					<property name="category" value="css" />
 					<property name="providerName" value="${project.parent.artifactId}" />
-					<property name="resourcePath" value="css/ugandaemr_poc_styles.css"/>
-					<property name="priority" value="-200" />
+					<property name="resourcePath" value="css/ugandaemr-poc-styles.css"/>
+					<property name="priority" value="-500" />
 				</bean>
 				<bean class="org.openmrs.ui.framework.resource.Resource">
 					<property name="category" value="js" />
@@ -43,8 +43,8 @@
 				<bean class="org.openmrs.ui.framework.resource.Resource">
 					<property name="category" value="js" />
 					<property name="providerName" value="${project.parent.artifactId}" />
-					<property name="resourcePath" value="js/js/ugandaemr_poc_javascript.js" />
-					<property name="priority" value="-200" />
+					<property name="resourcePath" value="js/ugandaemr-poc-javascript.js" />
+					<property name="priority" value="-600" />
 				</bean>
 				<bean class="org.openmrs.ui.framework.resource.Resource">
 					<property name="category" value="js" />

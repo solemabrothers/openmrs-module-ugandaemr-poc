@@ -1,22 +1,22 @@
-form label, .form label {
+.htmlform form label, .form label {
     float: left;
     padding: 0px 10px 0 0;
 }
 
-form input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
+.htmlformform input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
     margin: 10px 15px;
 }
 
-table td {
+.htmlformform table td {
     background: #FFFFFF;
     color: #404040;
 }
 
-form select, .form select {
+.htmlformform form select, .form select {
     min-width: 0px;
 }
 
-form input, form select, form textarea, form ul.select, .form input, .form select, .form textarea, .form
+.htmlformform form input, form select, form textarea, form ul.select, .form input, .form select, .form textarea, .form
 ul.select {
     background-color: #FBFBFB;
     border: 1px solid #CEC9C9;
@@ -41,4 +41,3 @@ ul.select {
 table th, table td {
     border: 1px solid #AFAFAF;
 }
-
