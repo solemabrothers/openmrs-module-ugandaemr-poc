@@ -10,7 +10,77 @@
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false"
           formDisplayStyle="Standard"
           formLabel="HCT Client Card">
+     <script type="text/javascript">
 
+         if (jQuery) {
+         jq(document).ready(function () {
+
+
+
+<!--         Enable HTC Delivery Model-->
+         jq('#162925').change(function () {
+         enable_disable('162925', '164400', '99416');
+         });
+
+<!--         Enable HIV Test date-->
+         jq('#99464').change(function () {
+         enable_disable('99464', '164400', '1065');
+         });
+
+<!--Enable HIV spouse test field-->
+         jq('#99472').change(function () {
+         enable_disable('99472', '99477', '1065');
+         });
+
+
+         jq('#162982').change(function () {
+         enable_disable('162982', '90200', '1065');
+         });
+
+
+         <!--Enable pre test counselling-->
+         jq('#162918').change(function () {
+         enable_disable('162918', '99368', '1065');
+         });
+
+         <!--Enable Results received as a couple:-->
+         jq('#99494').change(function () {
+         enable_disable('99494', '99497', '1065');
+         });
+
+         /* add JQuery validator classes and rules*/
+         jq("#nationalid input:text").addClass("nationalid");
+
+         /* add the validator on the beforeSubmit*/
+         beforeSubmit.push(function () {
+         jq("#htmlform").validate();
+         return jq("#htmlform").valid();
+         }
+         );
+
+         });
+
+
+         function enable_disable(triggerId, enabledDisabledId, conditionValue) {
+         if (getValue(triggerId + '.value') == conditionValue) {
+         enableContainer('#' + enabledDisabledId);
+         } else {
+         disableContainer('#' + enabledDisabledId);
+         }
+
+         }
+
+         beforeSubmit.push(function () {
+         var submitVal = true;
+         var submitValStage = [];
+
+
+         });
+         }
+
+
+
+     </script>
     <div class="ai-page-frame">
         <div class="headers" style="text-align: center;">
             <h3 style="background: #FFFF7D; padding: 10px;">HCT Client Card</h3>
@@ -66,9 +136,8 @@
                         <td style="width: 20%">
                             <label>HTS Delivery Model:</label>
                         </td>
-                        <td colspan="3">
-                                <obs id="br" conceptId="162925" answerConceptIds="99416,162921" answerLabels="Facility based,Community"
-                                     style="radio"/>
+                        <td>
+                                <obs id="162925" conceptId="162925" answerConceptIds="99416,162921" answerLabels="Facility based,Community" style="radio"/>
 
                         </td>
                     </tr>
@@ -89,8 +158,8 @@
                             <label> Entry Point For Health Facility Testing:</label>
                         </td>
                     <td>
-                            <span id="checkboxRadio">
-                                <obs conceptId="162925"
+                            <span >
+                                <obs conceptId="162925" id="162925"
                                      answerConceptIds="160542,165047,165048,165156,99593,164983,160456,165046,164984,165155,90015"
                                      answerLabels="1-OPD,2-Ward,3-ART Clinic,4-TB Clinic,5-Nutrition unit,5-Young Child Clinic (YCC),6-ANC,7-Maternity,8-PNC,9-Family Planning,10-SMC,11-STI Clinic"/>
                             </span>
@@ -163,8 +232,8 @@
                             <label>Have you ever tested for HIV before?:</label>
 
                         </td>
-                        <td colspan="3" class="TestedBeforeEnableDisable1">
-                            <obs id="br" conceptId="99464" answerConceptIds="1065,1066" answerLabels="YES,NO" style="radio"/>
+                        <td>
+                            <obs id="99464" conceptId="99464" answerConceptIds="1065,1066" answerLabels="YES,NO" style="radio"/>
                         </td>
                     </tr>
 
@@ -173,8 +242,8 @@
                             <label>Last HIV Vist Date:</label>
 
                         </td>
-                        <td colspan="3" class="TestedBeforeEnableDisable1">
-                            <obs id="br" conceptId="164400"/>
+                        <td>
+                            <obs id="164400" conceptId="164400"/>
                         </td>
                     </tr>
 
@@ -212,8 +281,8 @@
                             <td>
                                 <label>Has your spouse /partner been tested for HIV before? :</label>
                             </td>
-                            <td colspan="3" class="PartnerTestedBeforeEnableDisable1">
-                                <obs id="br" conceptId="99472" answerConceptIds="1065,1066,99480" answerLabels="Yes,No,Don't Know" style="radio"/>
+                            <td>
+                                <obs id="99472" conceptId="99472" answerConceptIds="1065,1066,99480" answerLabels="Yes,No,Don't Know" style="radio"/>
 
                             </td>
                         </tr>
@@ -224,7 +293,7 @@
                             <label style="float:right"><i>If yes What were the Results</i></label>
                         </td>
                         <td class="PartnerTestedBeforeEnableDisableChild1">
-                            <obs conceptId="99477" answerConceptIds="90166,90167,90001"
+                            <obs id="99477" conceptId="99477" answerConceptIds="90166,90167,90001"
                                  answerLabels="HIV +ve,HIV -ve,Unknown"/>
                         </td>
                     </tr>
@@ -234,8 +303,8 @@
                         <td style="width: 20%">
                             <label>Pre -Test Counseling done/information given:</label>
                         </td>
-                        <td colspan="3" class="PreTestCounselingEnableDisable1">
-                            <obs id="br" conceptId="162918" answerConceptIds="90003,90004" answerLabels="Yes, No" style="radio"/>
+                        <td>
+                            <obs id="162918" conceptId="162918" answerConceptIds="1065,1066" answerLabels="Yes, No" style="radio"/>
                         </td>
                     </tr>
                     <tr>
@@ -244,7 +313,7 @@
                         </td>
                         <td colspan="3" class="PreTestCounselingEnableDisableChild1">
                             <span class="CounseledAsCoupleEnableDisable1">
-                                <obs conceptId="99368" answerConceptIds="99365,99367,99366"
+                                <obs conceptId="99368" id="99368" answerConceptIds="99365,99367,99366"
                                      answerLabels="Individual,Couple,Group"/>
                             </span>
                         </td>
@@ -300,7 +369,7 @@
                                 couple:</label></td>
                             <td>
                                 <span class="CounseledAsCoupleEnableDisableChild1">
-                                    <obs conceptId="99494" answerConceptIds="1065,1066" answerLabels="Yes,No"/>
+                                    <obs conceptId="99494" id="99494" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
                                 </span>
                             </td>
                         </tr>
@@ -308,7 +377,7 @@
                             <td class="CounseledAsCoupleEnableDisableChild1"><label>Couple results:</label></td>
                             <td>
                                 <span class="ResultAsCoupleEnableDisableChild1">
-                                    <obs conceptId="99497" answerConceptIds="6096,99496" answerLabels="Discordant,Concordant"/>
+                                    <obs conceptId="99497" id="99497" answerConceptIds="6096,99496" answerLabels="Discordant,Concordant"/>
                                 </span>
                             </td>
                         </tr>
@@ -337,15 +406,16 @@
                     </tr>
 
                     <tr>
-                        <td class="LinkedToCareEnableDisable1"><label>Has client been linked to care or any other services?:</label>
-                            <obs conceptId="162982" answerConceptIds="1065,1066" answerLabels="Yes,No" style="radio"/>
+                        <td><label>Has client been linked to care or any other services?:</label>
+                            <obs id="162982" conceptId="162982" answerConceptIds="1065,1066" answerLabels="Yes,No"  style="radio"/>
                         </td>
-                        <td class="LinkedToCareEnableDisableChild1"><label>Where?:
-                            <obs conceptId="90200"/>
+                        <td ><label>Where?:
+                            <obs id="90200" conceptId="90200"/>
                         </label>
 
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2"><label><span class="required">*</span>Counsellor</label>
                             <encounterProvider required="true"/>
