@@ -11,122 +11,178 @@
           formDisplayStyle="Standard"
           formLabel="ART Card -  Health Education And Psychosocial Support Form">
 
+
+
+
     <div class="card">
-    <div class="card-header">
-        Visit details
-    </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-3">
-                    Visit Date  <encounterDate default="today"  class="col-sm-6"  />
+        <div class="headers" style="text-align: center;">
+            <h3 style="padding: 10px;">HMIS-003 Health Education And Psychosocial Support Form</h3>
+        </div>
 
-                </div>
-                <div class="col-lg-3">
-                    Is Visit On Schedule <obs id="br" conceptId="90069" style="checkbox"/>
 
+        <div class="card">
+            <div class="card-header">
+                Visit details
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                        Visit Date  <encounterDate default="today"  disallowMultipleEncountersOnDate="block" />
+                        </div>
+                    </div>
+                    <div class="col-">
+                        Is Visit On Schedule <obs id="br" conceptId="90069" style="checkbox"/>
+
+                    </div>
                 </div>
+
             </div>
 
         </div>
-
-    </div>
-    <div class="card-body">
-    </div>
+        <div class="card-body">
+        </div>
         <div class="card">
             <div class="card-header">
                 Encounter Information
             </div>
 
-    <div class="card-body">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Settings</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165185"
+                                     answerConceptIds="99417,99198,159928,165235"
+                                     answerLabels="Community,Home,School,Facility"
+                                     style="radio" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PSS Issues Identified</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165244"
+                                     answerConceptIds="165234,90118,165233,165236,90150,165237,165238,165239,165240,165241,165242,165243,165219,165223"
+                                     answerLabels="Stress,Anxiety,Bereavement,Non-Disclosure,Stigma,Dysfunctional Family,Alcohol and Substance Abuse, Risky Sexual Behaviour, Lack of Life survival skills,
+                                     Transitional Challenges,Poverty,Spiritual Issues,Malnourished,Had Less than One Meal a day"
+                                     style="dropdown;padding: 10px"  />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Depression Status</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165194" answerConceptIds="165186,165195,165196"
+                                     answerLabels="1. No Signs,2.Morethan 2 weeks Loss of Interest,3.More than 2 weeks of feeling down" style="radio"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GBV/VAC</td>
+                        <td>
 
-    <div class="row">
-                <div class="col-lg-4">
-                    <label>Settings</label>
-                    <obs conceptId="165185"
-                         answerConceptIds="99417,99198,159928"
-                         answerLabels="C-Community,H-Home,S-School"
-                         unitsCssClass="append-to-value"/>
-                </div>
-                <div class="col-lg-4">
-                    <label>PSS Issues Identified</label>
-                    <obs conceptId="165171"
-                         answerConceptIds="99803,99804,99805,99806,99807"
-                         answerLabels="Anger/Stress,Denial,Bereavement,Stigma and Discrimination"
-                         unitsCssClass="append-to-value"/>
-                </div>
-                <div class="col-lg-4">
-                    <label>ART Preparation and Readniness</label>
-                    <obs conceptId="165207"
-                         answerConceptIds="165202,165203,99186,165204,165206,165205"
-                         answerLabels="ART Literacy,Adherence Preparation and Plan,Ready To Start and Initiate,Not Ready to Start,Ongoing Adherence counselling and Support,Intensive Adherence counselling and support"
-                         unitsCssClass="append-to-value"/>
-                </div>
-    </div>
-        <div class="row">
-                <div class="col-lg-4">
-                    <label>Depression Status</label>
-                    <obs conceptId="165194" answerConceptIds="165186,165195,165196"
-                         answerLabels="1. No Signs,2.Morethan 2 weeks Loss of Interest,3.More than 2 weeks of feeling down" style="dropdown"/>
-                </div>
+                                <div class="row">
+                                    <obs conceptId="165188" answerConceptIds="165186,165187,165189"
+                                         answerLabels="1. No Signs,2.Emotional or Psyschosocial Harm,3.Physical Harm,4.Innappropritely touched/fondled,5.Forced Sexual Intercourse" style="radio"/>
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disclosed Relationship</td>
+                        <td>
 
-                <div class="col-lg-4">
-                    <label>GBV/VAC</label>
-                    <obs conceptId="165188" answerConceptIds="165186,165187,165189"
-                         answerLabels="1. No Signs,2.Emotional or Psyschosocial Harm,3.Physical Harm,4.Innappropritely touched/fondled,5.Forced Sexual Intercourse" style="dropdown"/>
-                </div>
-                <div class="col-lg-4">
-                    <label>Disclosed Relationship</label>
-                    <obs id="162871" conceptId="162871" answerConceptIds="90003,90004"
-                         answerLabels="1 - Yes,2 - No" style="yes_no"/>
-                </div>
+                            <div class="row">
+                                <obs conceptId="165194" answerConceptIds="90003,90004"
+                                     answerLabels="Yes,No" style="radio"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OVC  Assessment</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165212" answerConceptIds="160737,165208,165209,165210,165211"
+                                     answerLabels="1.Not assessed,2.Assessed Eligible not yet enrolled,3.Assessed and Not Eligible,4.Enrolled,5.Graduated" style="radio"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OVC Screening</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165200" answerConceptIds="165186,165223,165219,165220,164909,165221,165222"
+                                     answerLabels="1.No Signs,2.Had  less than 1 Meal a day,4.Malnourished,5.Caregiver,6.Non Suppressed VL,7.Missed Appointment,8.Signs of Abuse" style="dropdown"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PHDP Components</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165218"
+                                     answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002"
+                                     answerLabels="1.STI Screening And Treatment,2.FP Counselling,3.FP Method provided,4.Alcohol and Substance abuse reduction,5.Risk Reduction Counselling, 6.PMTCT,7.Disclosure Counselling,8.Mgt of Stigma and Discrimination,9.Nutritional Counselling,10.Basic care package,11.Others Specify"
+                                     />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Intervation Approaches</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165190"
+                                     answerConceptIds="99560,99366,165191,165192,165193"
+                                     answerLabels="1.Individual Counselling,Group psychotherapy,Peer counselling,Peer Support Group,Linkages and Refferals"
+                                     unitsCssClass="append-to-value"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Linkages and Rifferals</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="165193"
+                                     answerConceptIds="165197,165188,165198,165199,165200,99558,165192,99560,5484,165201,5622"
+                                     answerLabels="2.Livelihood Support,3.GBV/VAC care,4.Legal Support,5.Education Support,6.OVC Services, 7.Spiritual care,8.Community Support,9.Peer Support,10.Counselling,11.Nutritional Support,12.Sexaul Reproductive Health"
+                                     unitsCssClass="append-to-value"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comments</td>
+                        <td>
+                            <div class="row">
+                                <obs conceptId="99256"
+                                     unitsCssClass="append-to-value" style="textarea"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name of Provider</td>
+                        <td>
+                            <div class="row">
+                                <encounterProvider role="Provider" style="autocomplete"/>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                </table>
             </div>
-        <div class="row">
-                <div class="col-lg-4">
-                    <label>OVC Screening </label>
-                    <obs conceptId="165200" answerConceptIds="165186,165223,165219,165220,164909,165221,165222"
-                         answerLabels="1.No Signs,2.Had  less than 1 Meal a day,4.Malnourished,5.Caregiver,6.Non Suppressed VL,7.Missed Appointment,8.Signs of Abuse" style="dropdown"/>
-                </div>
-                <div class="col-lg-4">
-                    <label>OVC  Assessment</label>
-                    <obs conceptId="165212" answerConceptIds="160737,165208,165209,165210,165211"
-                         answerLabels="1.Not assessed,2.Assessed Eligible not yet enrolled,3.Assessed and Not Eligible,4.Enrolled,5.Graduated" style="dropdown"/>
-                </div>
 
-        <div class="col-lg-4">
-            <label>PHDP Components</label>
-            <obs conceptId="165218"
-                 answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002"
-                 answerLabels="1.STI Screening And Treatment,2.FP Counselling,3.FP Method provided,4.Alcohol and Substance abuse reduction,5.Risk Reduction Counselling, 6.PMTCT,7.Disclosure Counselling,8.Mgt of Stigma and Discrimination,9.Nutritional Counselling,10.Basic care package,11.Others Specify"
-                 unitsCssClass="append-to-value"/>
         </div>
-        </div>
-        <div class="row">
-        <div class="col-lg-4">
-            <label>Intervation Approaches</label>
-            <obs conceptId="165190"
-                 answerConceptIds="99560,99366,165191,165192,165193"
-                 answerLabels="1.Individual Counselling,Group psychotherapy,Peer counselling,Peer Support Group,Linkages and Refferals"
-                 unitsCssClass="append-to-value"/>
-        </div>
-        <div class="col-lg-4">
-            <label>Linkages and Rifferals  </label>
-            <obs conceptId="165193"
-                 answerConceptIds="165197,165188,165198,165199,165200,99558,165192,99560,5484,165201,5622"
-                 answerLabels="2.Livelihood Support,3.GBV/VAC care,4.Legal Support,5.Education Support,6.OVC Services, 7.Spiritual care,8.Community Support,9.Peer Support,10.Counselling,11.Nutritional Support,12.Sexaul Reproductive Health"
-                 unitsCssClass="append-to-value"/>
-        </div>
-        <div class="col-lg-4">
-            <label>Comments </label>
-            <obs conceptId="99256"
-                 unitsCssClass="append-to-value"/>
-        </div>
+
+
+
+
+        <section>
+            <submit/>
+        </section>
     </div>
-        </div>
-        </div>
-
-
-    <section>
-        <submit/>
-    </section>
 </htmlform>
-<!--        htmlformresources/htmlforms/HMIS-003-HealthEducationPage.xml-->
+        <!--        htmlformresources/htmlforms/HMIS-003-HealthEducationPage.xml-->
