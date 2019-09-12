@@ -10,16 +10,6 @@
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4'"
           formDisplayStyle="Standard"
           formLabel="ART Card -  Health Education And Psychosocial Support Form">
-    <style>
-        form label, .form label {
-        float: left;
-        padding: 0px 10px 0 0;
-        }
-
-        form input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
-        margin: 10px 15px;
-        }
-    </style>
 
     <div class="card">
         <div class="card-header text-center">
