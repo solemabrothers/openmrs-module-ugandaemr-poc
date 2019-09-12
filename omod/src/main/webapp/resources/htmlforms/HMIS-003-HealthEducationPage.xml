@@ -2,7 +2,7 @@
           formDescription="Captures health eduction and counseling encounters"
           formEncounterType="6d88e370-f2ba-476b-bf1b-d8eaf3b1b67e"
           formUuid="b8224534-7df0-4c00-ba8e-6b1f291087eb"
-          formVersion="1.2"
+          formVersion="3.0"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
           formOrder="2"
@@ -10,13 +10,20 @@
           formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false &amp;&amp; sessionLocation.uuid=='86863db4-6101-4ecf-9a86-5e716d6504e4'"
           formDisplayStyle="Standard"
           formLabel="ART Card -  Health Education And Psychosocial Support Form">
+    <style>
+        form label, .form label {
+        float: left;
+        padding: 0px 10px 0 0;
+        }
 
-
-
+        form input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
+        margin: 10px 15px;
+        }
+    </style>
 
     <div class="card">
-        <div class="headers" style="text-align: center;">
-            <h3 style="padding: 10px;">HMIS-003 Health Education And Psychosocial Support Form</h3>
+        <div class="card-header text-center">
+            <h3>HMIS-003 Health Education And Psychosocial Support Form</h3>
         </div>
 
 
@@ -31,16 +38,14 @@
                         Visit Date  <encounterDate default="today"  disallowMultipleEncountersOnDate="block" />
                         </div>
                     </div>
-                    <div class="col-">
-                        Is Visit On Schedule <obs id="br" conceptId="90069" style="checkbox"/>
+                    <div class="col-6">
+                        Is Visit On Schedule <obs conceptId="90069" style="checkbox"/>
 
                     </div>
                 </div>
 
             </div>
 
-        </div>
-        <div class="card-body">
         </div>
         <div class="card">
             <div class="card-header">
@@ -51,34 +56,30 @@
                 <table class="table table-striped">
                     <tr>
                         <td>Settings</td>
-                        <td>
-                            <div class="row">
-                                <obs conceptId="165185"
+                       <td>
+                            <obs conceptId="165185"
                                      answerConceptIds="99417,99198,159928,165235"
                                      answerLabels="Community,Home,School,Facility"
                                      style="radio" />
-                            </div>
-                        </td>
+                       </td>
                     </tr>
                     <tr>
                         <td>PSS Issues Identified</td>
                         <td>
-                            <div class="row">
                                 <obs conceptId="165244"
                                      answerConceptIds="165234,90118,165233,165236,90150,165237,165238,165239,165240,165241,165242,165243,165219,165223"
                                      answerLabels="Stress,Anxiety,Bereavement,Non-Disclosure,Stigma,Dysfunctional Family,Alcohol and Substance Abuse, Risky Sexual Behaviour, Lack of Life survival skills,
                                      Transitional Challenges,Poverty,Spiritual Issues,Malnourished,Had Less than One Meal a day"
-                                     style="dropdown;padding: 10px"  />
-                            </div>
+                                     style="dropdown"  />
                         </td>
                     </tr>
                     <tr>
                         <td>Depression Status</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="165194" answerConceptIds="165186,165195,165196"
                                      answerLabels="1. No Signs,2.Morethan 2 weeks Loss of Interest,3.More than 2 weeks of feeling down" style="radio"/>
-                            </div>
+
                         </td>
                     </tr>
                     <tr>
@@ -95,79 +96,73 @@
                         <td>Disclosed Relationship</td>
                         <td>
 
-                            <div class="row">
+
                                 <obs conceptId="165194" answerConceptIds="90003,90004"
                                      answerLabels="Yes,No" style="radio"/>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>OVC  Assessment</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="165212" answerConceptIds="160737,165208,165209,165210,165211"
                                      answerLabels="1.Not assessed,2.Assessed Eligible not yet enrolled,3.Assessed and Not Eligible,4.Enrolled,5.Graduated" style="radio"/>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>OVC Screening</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="165200" answerConceptIds="165186,165223,165219,165220,164909,165221,165222"
                                      answerLabels="1.No Signs,2.Had  less than 1 Meal a day,4.Malnourished,5.Caregiver,6.Non Suppressed VL,7.Missed Appointment,8.Signs of Abuse" style="dropdown"/>
-                            </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td>PHDP Components</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="165218"
                                      answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002"
                                      answerLabels="1.STI Screening And Treatment,2.FP Counselling,3.FP Method provided,4.Alcohol and Substance abuse reduction,5.Risk Reduction Counselling, 6.PMTCT,7.Disclosure Counselling,8.Mgt of Stigma and Discrimination,9.Nutritional Counselling,10.Basic care package,11.Others Specify"
                                      />
-                            </div>
+
                         </td>
                     </tr>
                     <tr>
                         <td>Intervation Approaches</td>
                         <td>
-                            <div class="row">
                                 <obs conceptId="165190"
                                      answerConceptIds="99560,99366,165191,165192,165193"
                                      answerLabels="1.Individual Counselling,Group psychotherapy,Peer counselling,Peer Support Group,Linkages and Refferals"
                                      unitsCssClass="append-to-value"/>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Linkages and Rifferals</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="165193"
                                      answerConceptIds="165197,165188,165198,165199,165200,99558,165192,99560,5484,165201,5622"
                                      answerLabels="2.Livelihood Support,3.GBV/VAC care,4.Legal Support,5.Education Support,6.OVC Services, 7.Spiritual care,8.Community Support,9.Peer Support,10.Counselling,11.Nutritional Support,12.Sexaul Reproductive Health"
                                      unitsCssClass="append-to-value"/>
-                            </div>
+
                         </td>
                     </tr>
                     <tr>
                         <td>Comments</td>
                         <td>
-                            <div class="row">
+
                                 <obs conceptId="99256"
                                      unitsCssClass="append-to-value" style="textarea"/>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Name of Provider</td>
                         <td>
-                            <div class="row">
+
                                 <encounterProvider role="Provider" style="autocomplete"/>
-                            </div>
+
                         </td>
                     </tr>
 
@@ -185,4 +180,3 @@
         </section>
     </div>
 </htmlform>
-        <!--        htmlformresources/htmlforms/HMIS-003-HealthEducationPage.xml-->
