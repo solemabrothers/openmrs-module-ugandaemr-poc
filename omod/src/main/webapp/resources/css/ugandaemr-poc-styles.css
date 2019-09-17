@@ -49,3 +49,21 @@ form label, .form label {
 form input[type="checkbox"], form input[type="radio"], .form input[type="checkbox"], .form input[type="radio"] {
     margin: 10px 15px;
 }
+
+#calculated-bmi {
+font-weight: bold;
+font-size: 1.4em;
+}
+
+.encounter-summary-container #calculated-bmi {
+font-size: 1em;
+font-weight: normal;
+}
+
+#99030{
+padding: 5px;
+}
+
+.append-to-value {
+ margin-left: 10px; /*this adds space between text fields and units for height, weight and temperature in the vitals form*/
+}
