@@ -121,16 +121,14 @@
                         <td>GBV/VAC</td>
                         <td>
 
-                                <div class="row">
-                                    <obs conceptId="165188" answerConceptIds="165186,165187,165246"
-                                         answerLabels="1-No Signs,2-Emotional or Psyschosocial Harm,3-Physical Harm,4-Innappropriately touched/fondled,5-Forced Sexual Intercourse" style="radio"/>
-                                </div>
+
+                                    <obs conceptId="165266" answerConceptIds="165186,165187,165189,1490,165262"
+                                         answerLabels="1-No Signs,2-Emotional or Psyschosocial Harm,3-Physical Harm,4-Innappropriately touched/fondled,5-Forced Sexual Intercourse" style="checkbox"/>
                         </td>
                     </tr>
                     <tr>
                         <td>Disclosed Relationship</td>
                         <td>
-
 
                                 <obs conceptId="165194" answerConceptIds="90003,90004"
                                      answerLabels="Yes,No" style="radio"/>
