@@ -24,7 +24,6 @@ function enable_disable(triggerId, enabledDisabledId, conditionValue) {
     }
 
 }
-
 function disable_fields(groupId){
     var disable = true;
     var group = jq("#"+groupId);
