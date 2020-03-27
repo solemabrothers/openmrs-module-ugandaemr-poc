@@ -51,7 +51,7 @@
     "order": 1,
     "extensions": [
       {
-        "id": "ugandaemr.mch.homepageLink",
+        "id": "ugandaemr.counselling.homepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
         "label": "ugandaemrpoc.counseling.center.label",
