@@ -47,86 +47,78 @@
     <script type="text/javascript">
 
         if (jQuery) {
-        jq(document).ready(function () {
-        $allRows_other = jq(this).find('.multi-drug-other');
-        $allRows_other.hide();
-        jq('#1-removeEntry-other').remove();
-        jq('#10-addEntry-other').remove();
-        jq('#1-toggleContainer-other').show();
+           jq(document).ready(function () {
+                $allRows_other = jq(this).find('.multi-drug-other');
+                $allRows_other.hide();
+                jq('#1-removeEntry-other').remove();
+                jq('#10-addEntry-other').remove();
+                jq('#1-toggleContainer-other').show();
 
-        jq('#11-removeEntry-other').remove();
-        jq('#20-addEntry-other').remove();
-        jq('#11-toggleContainer-other').show();
-        });
+                jq('#11-removeEntry-other').remove();
+                jq('#20-addEntry-other').remove();
+                jq('#11-toggleContainer-other').show();
+                });
 
-        jq(document).ready(function () {
-        jq('.addEntry-other').on("click", function () {
-        var correctedAddButtonId = parseFloat(this.id) + 1;
-        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer-other";
-        jq(contentAddId).toggle(true);
-        jq('#' + this.id).toggle(false);
-        jq('#' + parseFloat(this.id) + '-removeEntry-other').toggle(true);
-        return false;
-        });
-        });
+           jq(document).ready(function () {
+                jq('.addEntry-other').on("click", function () {
+                var correctedAddButtonId = parseFloat(this.id) + 1;
+                var contentAddId = "#" + correctedAddButtonId + "-toggleContainer-other";
+                jq(contentAddId).toggle(true);
+                jq('#' + this.id).toggle(false);
+                jq('#' + parseFloat(this.id) + '-removeEntry-other').toggle(true);
+                return false;
+                });
+                });
 
-        jq(document).ready(function () {
-        jq('.removeEntry-other').on("click", function () {
-        var correctedRemoveButtonId = parseFloat(this.id) - 1;
-        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer-other";
-        jq(contentAddId).toggle(false);
-        jq(':input:not(:button)', contentAddId).val([]);
-        jq('#' + correctedRemoveButtonId + '-addEntry-other').toggle(true);
-        jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);
+           jq(document).ready(function () {
+                jq('.removeEntry-other').on("click", function () {
+                var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer-other";
+                jq(contentAddId).toggle(false);
+                jq(':input:not(:button)', contentAddId).val([]);
+                jq('#' + correctedRemoveButtonId + '-addEntry-other').toggle(true);
+                jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);
 
-        return false;
-        });
+                return false;
+                });
 
-        });
+                });
 
+           jq(document).ready(function () {
+                $allRows = jq(this).find('.multi-arv-drug');
+                $allRows.hide();
+                jq('#1-removeEntry1-other').remove();
+                jq('#10-addEntry1-other').remove();
+                jq('#1-toggleContainer1-other').show();
 
+                jq('#11-removeEntry').remove();
+                jq('#20-addEntry1-other').remove();
+                jq('#11-toggleContainer1-other').show();
+                });
 
-        jq(document).ready(function () {
-        $allRows = jq(this).find('.multi-arv-drug');
-        $allRows.hide();
-        jq('#1-removeEntry1-other').remove();
-        jq('#10-addEntry1-other').remove();
-        jq('#1-toggleContainer1-other').show();
+           jq(document).ready(function () {
+                jq('.addEntry-other1').on("click", function () {
+                var correctedAddButtonId = parseFloat(this.id) + 1;
+                var contentAddId = "#" + correctedAddButtonId + "-toggleContainer1-other";
+                jq(contentAddId).toggle(true);
+                jq('#' + this.id).toggle(false);
+                jq('#' + parseFloat(this.id) + '-removeEntry1-other').toggle(true);
+                return false;
+                });
+                });
 
-        jq('#11-removeEntry').remove();
-        jq('#20-addEntry1-other').remove();
-        jq('#11-toggleContainer1-other').show();
-        });
-
-
-
-        jq(document).ready(function () {
-        jq('.addEntry-other1').on("click", function () {
-        var correctedAddButtonId = parseFloat(this.id) + 1;
-        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer1-other";
-        jq(contentAddId).toggle(true);
-        jq('#' + this.id).toggle(false);
-        jq('#' + parseFloat(this.id) + '-removeEntry1-other').toggle(true);
-        return false;
-        });
-        });
-
-        jq(document).ready(function () {
-        jq('.removeEntry-other1').on("click", function () {
-        var correctedRemoveButtonId = parseFloat(this.id) - 1;
-        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer1-other";
-        jq(contentAddId).toggle(false);
-        jq(':input:not(:button)', contentAddId).val([]);
-        jq('#' + correctedRemoveButtonId + '-addEntry1-other').toggle(true);
-        jq('#' + correctedRemoveButtonId + '-removeEntry1-other').toggle(true);
-
-        return false;
-        });
+           jq(document).ready(function () {
+                jq('.removeEntry-other1').on("click", function () {
+                var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer1-other";
+                jq(contentAddId).toggle(false);
+                jq(':input:not(:button)', contentAddId).val([]);
+                jq('#' + correctedRemoveButtonId + '-addEntry1-other').toggle(true);
+                jq('#' + correctedRemoveButtonId + '-removeEntry1-other').toggle(true);
+                return false;
+                });
 
         });
-
-
-
 
 
 
