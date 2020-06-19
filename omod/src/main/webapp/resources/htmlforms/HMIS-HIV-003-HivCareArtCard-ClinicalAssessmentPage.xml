@@ -1827,7 +1827,7 @@
                                                                 <obsgroup groupingConceptId="165462">
                                                                     <div class="row multi-drug-other" id="{id}-toggleContainer-other">
                                                                         <div class="col-2">
-                                                                            <obs labelText="Drug" conceptId="99035" answerClasses="Drug" class="fullwidth"/>
+                                                                            <obs labelText="Drug" conceptId="99035" class="fullwidth"/>
                                                                         </div>
                                                                         <div class="col-2">
                                                                             <obs labelText="Quantity" conceptId="160856"/>
