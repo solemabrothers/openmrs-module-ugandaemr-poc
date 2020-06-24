@@ -654,26 +654,26 @@
 									<div class="card">
 										<div class="card-body">
 											<div class="row">
-												<div class="col-md-6">
+												<div class="col-md-3">
 													<label>LLINs Given to Baby</label>
 													<obs id="" conceptId="165025" answerConceptIds="1065,1066" answerLabels="Y,N"   style="radio" class="horizontal" />
 												</div>
-												<div class="col-md-6">
+												<div class="col-md-3">
 													<label>Condition of Baby at Discharge</label>
-													<obs conceptId="99334"  answerConceptIds="99331,162953,99332,99333,165448,165449,162954" answerLabels="MSB - Macerated Still Bath,FSB - Fresh Still Birth, NND - Immediate Neonatal Death, AL - Live Baby, AL-R - Live baby referred to another unit, AL-T - Live baby transferred to another ward/ Department, BDF - Baby Born With defect" style="dropdown" id="99334"/>
+													<obs conceptId="99334"  class="long-value-select"  answerConceptIds="99331,162953,99332,99333,165448,165449,162954" answerLabels="MSB - Macerated Still Bath,FSB - Fresh Still Birth, NND - Immediate Neonatal Death, AL - Live Baby, AL-R - Live baby referred to another unit, AL-T - Live baby transferred to another ward/ Department, BDF - Baby Born With defect" style="dropdown" id="99334"/>
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<label>Other Ward/Department</label>
 													<obs conceptId="165456" id="other-ward-or-department" />
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<label>Transferred by</label>
 													<div id="transferred-by">
 														<encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" />
 													</div>
 												</div>
-												<div class="col-md-4">
-													<label>Transfered to</label>
+												<div class="col-md-3">
+													<label>Transferred to</label>
 													<div id="transferred-to">
 														<obs conceptId="90211" id="place-transfered-to" />
 													</div>
