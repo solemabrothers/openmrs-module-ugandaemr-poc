@@ -18,6 +18,7 @@
                 disable_fields("other-source-of-warmth");
                 disable_fields("other-ward-or-department");
                 disable_fields("transferred-by");
+				disable_fields("transferred-to");
                 disable_fields("other-mode-of-delivery");
 
                 //enable/disable other management procedure
@@ -55,6 +56,15 @@
                     	disable_fields("transferred-by")
                     }
                 });
+
+		       //enable/disable transferred to
+		         jq("#99334").change(function () {
+					if(jq(this).find("select").find(":selected").val() == "165449") {
+					enable_fields("transferred-to");
+					} else {
+					disable_fields("transferred-to")
+					}
+					});
 
                 //enable/disable other mode of delivery
                 jq("#5630").change(function () {
