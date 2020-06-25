@@ -344,41 +344,16 @@
 	                                </div>
 	                            </div>
                                 <div class="card">
-									<div class="card-header">
-										Syphilis and Hep B Test Results
-									</div>
-									<div class="card-body">
-										<div class="row">
-											<div class="col-md-1">
-												<label>Woman</label>
+	                                <div class="card-header">
+	                                    Results for Syphilis And Hepatitis B
+	                                </div>
+	                                <div class="card-body">
+	                                    <div class="row">
+		                                    <div class="col-md-6">
+													<obs conceptId="165464" answerConceptIds="165465,165466,165467,165468" answerLabels="Rx - Client reactive treatmeant given,+Ve - Client Positive no Treatment,NR - Results Given Client non-reactive,NT - Client not Tested for Syphilis/Hep B" style="dropdown" />
 											</div>
-											<div class="col-md-5">
-												<obs conceptId="165464" answerConceptIds="165465,165466,165467,165468"
-													 answerLabels="Rx - Client tested positive results given and treatment initiated,
-                                                                   +Ve - Client tested positive results given but treatment not yet initiated,
-                                                                   NR - Client tested negative and results given,
-                                                                   NT - Client not Tested for Syphilis/Hep B"
-													 style="dropdown" />
-											</div>
-											<div class="col-md-1">
-												<label>Partner</label>
-											</div>
-											<div class="col-md-5">
-												<obs conceptId="165464" answerConceptIds="165465,165466,165467,165472,165473,165474,165475,165476,165477,165468"
-													 answerLabels="Rx - Client tested positive results given and treatment initiated,
-                                                                   +Ve - Client tested positive results given but treatment not yet initiated,
-                                                                   NR - Client tested negative and results given,
-                                                                   RX&#8730; - Revisit - Client tested positive and results given,
-                                                                   +Ve&#8730; - Revisit - Client tested positive but not yet given treatment,
-                                                                   NR&#8730; - Revisit - Client tested negative results given,
-                                                                   RX+ - Retest - Client tested positive and results given,
-                                                                   +Ve+ - Retest -Client tested positive but not yet given treatment,
-                                                                   NR+ - Retest - Client tested negative and results given,
-                                                                   NT - Client not Tested for Syphilis/Hep B"
-													 style="dropdown" />
-											</div>
-										</div>
-									</div>
+	                                	</div>
+	                                </div>
 	                            </div>
 								<div class="card">
 									<div class="card-header">
@@ -662,20 +637,14 @@
 													<label>Condition of Baby at Discharge</label>
 													<obs conceptId="99334"  answerConceptIds="99331,162953,99332,99333,165448,165449,162954" answerLabels="MSB - Macerated Still Bath,FSB - Fresh Still Birth, NND - Immediate Neonatal Death, AL - Live Baby, AL-R - Live baby referred to another unit, AL-T - Live baby transferred to another ward/ Department, BDF - Baby Born With defect" style="dropdown" id="99334"/>
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-6">
 													<label>Other Ward/Department</label>
 													<obs conceptId="165456" id="other-ward-or-department" />
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-6">
 													<label>Transferred by</label>
 													<div id="transferred-by">
 														<encounterProviderAndRole encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" />
-													</div>
-												</div>
-												<div class="col-md-4">
-													<label>Transfered to</label>
-													<div id="transferred-to">
-														<obs conceptId="90211" id="place-transfered-to" />
 													</div>
 												</div>
 											</div>
