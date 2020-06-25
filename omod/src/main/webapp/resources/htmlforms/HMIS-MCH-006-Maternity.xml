@@ -60,11 +60,11 @@
 		       //enable/disable transferred to
 		         jq("#99334").change(function () {
 					if(jq(this).find("select").find(":selected").val() == "165449") {
-					enable_fields("transferred-to");
+					 	enable_fields("transferred-to");
 					} else {
-					disable_fields("transferred-to")
+					   disable_fields("transferred-to")
 					}
-					});
+		          });
 
                 //enable/disable other mode of delivery
                 jq("#5630").change(function () {
