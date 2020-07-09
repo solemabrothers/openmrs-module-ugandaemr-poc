@@ -200,6 +200,26 @@
                 });
 
             });
+        <ifMode mode = "EDIT" >
+
+            jq(document).ready(function () {
+              $allRows = jq(this).find('.multi-drug');
+              $allRows.hide();
+              for (let x = 0; x&lt;= 10; x++) {
+                if (jq(this).find('#' +x+ '-drug').find("input[type$='text']").val()!='')
+                jq(this).find('#' +x+ '-toggleContainer').show();
+              }
+            });
+
+            jq(document).ready(function () {
+               $allRows = jq(this).find('.multi-drug-other');
+               $allRows.hide();
+               for (let x = 0; x&lt;= 10; x++) {
+                    if (jq(this).find('#' +x+ '-drugother').find("input[type$='text']").val()!='')
+                    jq(this).find('#' +x+ '-toggleContainer-other').show();
+                }
+            });
+        </ifMode>
 
             var instabilityCause = "";
 
@@ -929,6 +949,7 @@
 
 
         </ifMode>
+
 
         </includeIf>
 
@@ -1783,7 +1804,7 @@
                                                                 <obsgroup groupingConceptId="160741">
                                                                     <div class="row multi-drug" id="{id}-toggleContainer">
                                                                         <div class="col-2">
-                                                                            <obs labelText="Drug" conceptId="1282" answerClasses="Drug" style="autocomplete" class="fullwidth"/>
+                                                                            <obs labelText="Drugs"  id="{id}-drug" conceptId="1282" answerClasses="Drug" style="autocomplete" class="fullwidth"/>
                                                                         </div>
                                                                         <div class="col-2">
                                                                             <obs labelText="Quantity" conceptId="160856"/>
@@ -1822,64 +1843,54 @@
                                                 </div>
                                         </div>
                                         <div class="card">
-                                                <div class="card-header">
-                                                    <label>Other Medications</label>
+                                            <div class="card-header">
+                                                <label>Other Medications</label>
+                                            </div>
+                                            <div class="card-body">
+                                                <div>
+                                                    <repeat>
+                                                        <template>
+                                                            <obsgroup groupingConceptId="165874">
+                                                                <div class="row multi-drug-other" id="{id}-toggleContainer-other">
+                                                                    <div class="col-2">
+                                                                        <obs labelText="Drug" id="{id}-drugother" conceptId="99035" class="fullwidth"/>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                        <obs labelText="Quantity" conceptId="160856"/>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                        <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
+                                                                    </div>
+                                                                    <div class="col-2 duration">
+                                                                        <label>Duration</label>
+                                                                        <obs conceptId="159368"/>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                        <obs conceptId="1732" labelText="Duration unit"/>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                        <div class="add-entry">
+                                                                            <a href="#" id="{id}-addEntry-other" class="addEntry-other add-more-link"><i class="icon-plus-sign"></i></a>
+                                                                            <a href="#" class="removeEntry-other remove-more-link" id="{id}-removeEntry-other"><i class="icon-minus"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </obsgroup>
+                                                        </template>
+                                                        <render id="1"/>
+                                                        <render id="2"/>
+                                                        <render id="3"/>
+                                                        <render id="4"/>
+                                                        <render id="5"/>
+                                                        <render id="6"/>
+                                                        <render id="7"/>
+                                                        <render id="8"/>
+                                                        <render id="9"/>
+                                                        <render id="10"/>
+                                                    </repeat>
                                                 </div>
-                                                <div class="card-body">
-                                                    <table class="multi table table-striped  table-borderless" >
-                                                        <tbody>
-                                                             <repeat>
-                                                            <template>
-                                                                <obsgroup groupingConceptId="165874">
-                                                                    <tr class="othermedications">
-                                                                        <td  class="multi-drug-other" id="{id}-toggleContainer-other">
-                                                                            <div class="row" >
-                                                                            <div class="col-2">
-                                                                            <obs labelText="Drug"  id="drugs"  conceptId="99035" class="fullwidth"/>
-                                                                            </div>
-                                                                                <div class="col-2">
-                                                                                    <obs labelText="Quantity" conceptId="160856"/>
-                                                                                </div>
-
-                                                                                <div class="col-2">
-                                                                                    <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
-
-                                                                                </div>
-                                                                                <div class="col-2">
-                                                                                    <label>Duration</label>
-                                                                                    <obs conceptId="159368"/>
-                                                                                </div>
-
-                                                                                <div class="col-2">
-                                                                                    <obs conceptId="1732" labelText="Duration unit"/>
-                                                                                </div>
-                                                                                <div class="col-2">
-                                                                                    <div class="add-entry">
-                                                                                        <a href="#" id="{id}-addEntry-other" class="addEntry-other add-more-link"><i class="icon-plus-sign"></i></a>
-                                                                                        <a href="#" class="removeEntry-other remove-more-link" id="{id}-removeEntry-other"><i class="icon-minus"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-
-                                                                    </tr>
-                                                                </obsgroup>
-                                                            </template>
-                                                            <render id="1"/>
-                                                            <render id="2"/>
-                                                            <render id="3"/>
-                                                            <render id="4"/>
-                                                            <render id="5"/>
-                                                            <render id="6"/>
-                                                            <render id="7"/>
-                                                            <render id="8"/>
-                                                            <render id="9"/>
-                                                            <render id="10"/>
-                                                        </repeat>
-                                                        </tbody>
-                                                    </table>
-                                                    </div>
-                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="card">
                                             <div class="card-header">Art</div>
@@ -3129,9 +3140,9 @@
                                                 <repeat>
                                                     <template>
                                                         <obsgroup groupingConceptId="160741">
-                                                            <div class="row multi-drug" id="{id}-toggleContainer">
+                                                            <div class="row multi-drug-other" id="{id}-toggleContainer">
                                                                 <div class="col-md-2">
-                                                                    <obs labelText="Drug" conceptId="1282" answerClasses="Drug" style="autocomplete" class="fullwidth"/>
+                                                                    <obs labelText="Drug"   conceptId="1282" answerClasses="Drug" style="autocomplete" class="fullwidth"/>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <obs class="drug-strength" conceptId="1444" labelText="Strength"/>
