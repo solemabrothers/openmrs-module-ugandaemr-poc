@@ -850,6 +850,7 @@
                     return false;
                 }
 
+
                 /* if DSDM is not FBIM or FTR or Empty and patient is not stable should not save.*/
                 if (jq("#patient-categorization").find("select").find(":selected").val() !== "90003" &amp;&amp; (jq("#165143").find("select").find(":selected").val() !== "165138" &amp;&amp; jq("#165143").find("select").find(":selected").val() !== "165140" &amp;&amp; jq("#165143").find("select").find(":selected").val() !== "")) {
                     getField('165143.error').html('Patient Not Stable due to ' + instabilityCause + '. \n Only Stable Patients can be enrolled in ' + jq("#165143").find("select").find(":selected").text()).show();
@@ -859,6 +860,7 @@
                 }
                 return true;
             });
+
         }
 
         <!-- only show BMI if patient is more than 5 years old (on the encounterDate) -->
@@ -924,7 +926,10 @@
                     jq(form).find('#hidden-calculated-bmi').val(bmi.toFixed(1));
                 }
             });
+
+
         </ifMode>
+
         </includeIf>
 
     </script>
@@ -1821,34 +1826,43 @@
                                                     <label>Other Medications</label>
                                                 </div>
                                                 <div class="card-body">
-                                                    <div>
-                                                        <repeat>
+                                                    <table class="multi table table-striped  table-borderless" >
+                                                        <tbody>
+                                                             <repeat>
                                                             <template>
                                                                 <obsgroup groupingConceptId="165874">
-                                                                    <div class="row multi-drug-other" id="{id}-toggleContainer-other">
-                                                                        <div class="col-2">
-                                                                            <obs labelText="Drug" conceptId="99035" class="fullwidth"/>
-                                                                        </div>
-                                                                        <div class="col-2">
-                                                                            <obs labelText="Quantity" conceptId="160856"/>
-                                                                        </div>
-                                                                        <div class="col-2">
-                                                                            <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
-                                                                        </div>
-                                                                        <div class="col-2 duration">
-                                                                            <label>Duration</label>
-                                                                            <obs conceptId="159368"/>
-                                                                        </div>
-                                                                        <div class="col-2">
-                                                                            <obs conceptId="1732" labelText="Duration unit"/>
-                                                                        </div>
-                                                                        <div class="col-2">
-                                                                            <div class="add-entry">
-                                                                                <a href="#" id="{id}-addEntry-other" class="addEntry-other add-more-link"><i class="icon-plus-sign"></i></a>
-                                                                                <a href="#" class="removeEntry-other remove-more-link" id="{id}-removeEntry-other"><i class="icon-minus"></i></a>
+                                                                    <tr class="othermedications">
+                                                                        <td  class="multi-drug-other" id="{id}-toggleContainer-other">
+                                                                            <div class="row" >
+                                                                            <div class="col-2">
+                                                                            <obs labelText="Drug"  id="drugs"  conceptId="99035" class="fullwidth"/>
                                                                             </div>
-                                                                        </div>
-                                                                    </div>
+                                                                                <div class="col-2">
+                                                                                    <obs labelText="Quantity" conceptId="160856"/>
+                                                                                </div>
+
+                                                                                <div class="col-2">
+                                                                                    <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
+
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <label>Duration</label>
+                                                                                    <obs conceptId="159368"/>
+                                                                                </div>
+
+                                                                                <div class="col-2">
+                                                                                    <obs conceptId="1732" labelText="Duration unit"/>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <div class="add-entry">
+                                                                                        <a href="#" id="{id}-addEntry-other" class="addEntry-other add-more-link"><i class="icon-plus-sign"></i></a>
+                                                                                        <a href="#" class="removeEntry-other remove-more-link" id="{id}-removeEntry-other"><i class="icon-minus"></i></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+
+                                                                    </tr>
                                                                 </obsgroup>
                                                             </template>
                                                             <render id="1"/>
@@ -1862,10 +1876,12 @@
                                                             <render id="9"/>
                                                             <render id="10"/>
                                                         </repeat>
+                                                        </tbody>
+                                                    </table>
                                                     </div>
                                                 </div>
-                                            </div>
-                                                                   <div class="card">
+
+                                        <div class="card">
                                             <div class="card-header">Art</div>
                                             <div class="card-body">
                                                 <div class="row">
