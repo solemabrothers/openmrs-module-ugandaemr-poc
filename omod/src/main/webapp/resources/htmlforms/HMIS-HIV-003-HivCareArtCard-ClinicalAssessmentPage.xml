@@ -212,7 +212,15 @@
                 jq('#11-toggleContainer').show();
                 for (let x = 0; x&lt;= 10; x++) {
                      if (jq(this).find('#' +x+ '-drug').find("input[type$='text']").val()!='')
-                     jq(this).find('#' +x+ '-toggleContainer').show();
+                     {
+                         jq(this).find('#' +x+ '-toggleContainer').show();
+                          jq(this).find('#' +x+ '-addEntry').hide();
+                     }
+                    else {
+                            x-=1;
+                            jq(this).find('#' +x+ '-addEntry').show();
+                            break;
+                    }
                 }
             });
 
@@ -227,7 +235,15 @@
                 jq('#11-toggleContainer-other').show();
                 for (let x = 0; x&lt;= 10; x++) {
                     if (jq(this).find('#' +x+ '-drugother').find("input[type$='text']").val()!='')
-                    jq(this).find('#' +x+ '-toggleContainer-other').show();
+                    {
+                      jq(this).find('#' +x+ '-toggleContainer-other').show();
+                      jq(this).find('#' +x+ '-addEntry-other').hide();
+                    }
+                    else {
+                        x-=1;
+                        jq(this).find('#' +x+ '-addEntry-other').show();
+                        break;
+                    }
                 }
             });
         </ifMode>
