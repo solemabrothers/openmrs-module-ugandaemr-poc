@@ -1003,6 +1003,10 @@
                 var encounterDate = new Date((getValue('encounterDate.value')));
                 var appointment = new Date((getValue('returndate.value')));
 
+                if(getValue('provider.value')==""){
+                     jq().toastmessage('showErrorToast', "Attending clinician is required");
+                 }
+
                 if (encounterDate &gt;= appointment) {
                     getField('returndate.error').html('The return date must be after the date of this visit ' +
                         formatDateForDisplay(encounterDate)).show();
@@ -1422,7 +1426,7 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                     <label><span class="required">*</span>Attending Clinician</label>
-                                                        <encounterProvider role="Provider" style="autocomplete"/>
+                                                        <encounterProvider role="Provider" style="autocomplete" id="provider"/>
                                                     </div>
                                                 </div>
                                             </div>
