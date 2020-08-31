@@ -101,7 +101,7 @@ public class UgandaEMRPOCServiceImpl extends BaseOpenmrsService implements Ugand
             patientQueueVisitMapper.setGender(patientQueue.getPatient().getGender());
             patientQueueVisitMapper.setDateCreated(patientQueue.getDateCreated().toString());
             if (patientQueue.getDateChanged() != null) {
-                patientQueueVisitMapper.setDateChanged(patientQueue.getDateChanged().toString());
+                //patientQueueVisitMapper.setDateChanged(patientQueue.getDateChanged().toString());
             }
             patientQueueMappers.add(patientQueueVisitMapper);
         }
@@ -489,7 +489,7 @@ public class UgandaEMRPOCServiceImpl extends BaseOpenmrsService implements Ugand
                 labQueueMapper.setAge(patientQueue.getPatient().getAge().toString());
                 labQueueMapper.setDateCreated(patientQueue.getDateCreated().toString());
                 if (patientQueue.getDateChanged() != null) {
-                    labQueueMapper.setDateChanged(patientQueue.getDateChanged().toString());
+                    //labQueueMapper.setDateChanged(patientQueue.getDateChanged().toString());
                 }
                 labQueueMapper.setEncounterId(patientQueue.getEncounter().getEncounterId().toString());
                 labQueueMapper.setVisitNumber(patientQueue.getVisitNumber());

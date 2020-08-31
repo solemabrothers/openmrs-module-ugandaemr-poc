@@ -29,4 +29,7 @@ public class PharmacyMapper extends PatientQueueMapper implements Serializable {
     public void setVisitId(Integer visitId) {
         this.visitId = visitId;
     }
+
+    public void setDateChanged(String toString) {
+    }
 }
