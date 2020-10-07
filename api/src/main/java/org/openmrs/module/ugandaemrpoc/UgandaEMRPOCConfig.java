@@ -15,7 +15,7 @@ public class UgandaEMRPOCConfig {
 
 	public static final String DRUG_SET_CLASS = "Drug";
 	public static final String LAB_SET_CLASS = "LabSet";
-	public static final String TEST_SET_CLASS = "LabSet";
+	public static final String TEST_SET_CLASS = "Test";
 
 	public static final String ORDER_TYPE_DRUG_UUID = "131168f4-15f5-102d-96e4-000c29c2a5d7";
 	public static final String ORDER_TYPE_LAB_UUID =  "52a447d3-a64a-11e3-9aeb-50e549534c5e";
@@ -85,6 +85,8 @@ public class UgandaEMRPOCConfig {
 	public static final String TB_DISTRICT_NUMBER_PROGRAM_ATTRIBUTE_TYPE_UUID = "af9bac5e-d245-11ea-87d0-0242ac130003";
 	public static final int TB_REGIMEN_CONCEPT_ID = 159958;
 	public static final String TB_REGIMEN_PROGRAM_ATTRIBUTE_TYPE_UUID = "af9bb0c8-d245-11ea-87d0-0242ac130003";
+	public static final int DR_TB_NUMBER_PROGRAM_CONCEPT_ID = 165843;
+	public static final String DR_TB_NUMBER_PROGRAM_ATTRIBUTE_TYPE_UUID = "1628fa4e-fda2-11ea-adc1-0242ac120002";
 
 	public UgandaEMRPOCConfig() {
 	}
