@@ -206,8 +206,10 @@
                                         <div class="card-body">
 											<div class="row">
 												<div class="col-md-4 html-form-entry-disabled-field"><label>Missed Appointment Date</label>
-													<encounterDate default="today" disallowMultipleEncountersOnDate="block" />
-													<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
+													<obs id="166158" conceptId="166158" allowFutureDates="false" class="Vertical-layout-options">
+														<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
+													</obs>
+
 												</div>
 												<div class="col-md-3"><label>Service Point</label>
 													<obs id="164993" conceptId="164993" answerConceptIds="165047,165048,90002" answerLabels="ART Clinic,TB Clinic,Other"/>
@@ -269,9 +271,9 @@
 																</div>
 																<div class="col-md-3">
 																	<label>Follow Up Date</label>
-																	<obs id="165373" conceptId="165373" allowFutureDates="false" class="Vertical-layout-options">
-																		<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
-																	</obs>
+																	<encounterDate default="today" disallowMultipleEncountersOnDate="block" />
+																	<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
+
 																</div>
 																<div class="col-md-3">
 																	<label>Follow Up Person</label>
@@ -291,7 +293,7 @@
 																</div>
 																<div class="col-md-3">
 																	<label>ART Clinic</label>
-																	<obs id="90291" conceptId="90291" />
+																	<obs id="90211_{n}" conceptId="90211" />
 																</div>
 																<div class="col-md-3">
 																	<label>ART No.</label>
