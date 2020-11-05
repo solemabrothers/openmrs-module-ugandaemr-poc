@@ -35,9 +35,6 @@
 
 				<ifMode mode="ENTER">
 
-					$otherRows.hide(); //Hide all rows apart from first row if adding new form
-					$firstRow.find('.remove').hide(); //Hide the remove button from the first row
-
 					<!-- Disable art clinic and art number if client is self reffered-->	
 					function disableARTclinicandArtnumber () {
 						var n;
@@ -183,7 +180,7 @@
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" data-toggle="tab" href="#registration">
+								<a class="nav-link active" data-toggle="tab" href="#visit-details">
 									Appointment Information
 								</a>
 							</li>
@@ -197,19 +194,20 @@
 					<div class="card-body">
 						<div class="tab-content">
 							<!-- Registration Information -->
-							<div class="tab-pane active" id="registration">
+							<div class="tab-pane active" id="visit-details">
 								<section>
 									<div class="card">
 										<div class="card-header">
-                                            Appointment
-                                        </div>
-                                        <div class="card-body">
+											Visit details
+										</div>
+										<div class="card-body">
 											<div class="row">
-												<div class="col-md-4 html-form-entry-disabled-field"><label>Missed Appointment Date</label>
-													<obs id="166158" conceptId="166158" allowFutureDates="false" class="Vertical-layout-options">
-														<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
-													</obs>
-
+												<div class="col-md-6">
+													<div class="col-md-4 html-form-entry-disabled-field"><label>Missed Appointment Date</label>
+														<obs id="166158" conceptId="166158" allowFutureDates="false" class="Vertical-layout-options">
+															<i class="icon-calendar small right-addon-row position-absolute" style="right: 24%; top: 48%;"></i>
+														</obs>
+													</div>
 												</div>
 												<div class="col-md-3"><label>Service Point</label>
 													<obs id="164993" conceptId="164993" answerConceptIds="165047,165048,90002" answerLabels="ART Clinic,TB Clinic,Other"/>
@@ -222,13 +220,13 @@
 									</div>
 									<div class="card">
 										<div class="card-header">
-                                            Medication Due for Refill
-                                        </div>
+											Medication Due for Refill
+										</div>
 										<div class="card-body">
 											<div class="row">
 												<obs conceptId="165482" answerConceptId="164972" answerLabel="ART" style="checkbox" class="col-md-1" />
 												<obs conceptId="165482" answerConceptId="1159" answerLabel="TB Meds/TPT" style="checkbox" class="col-md-2" />
-												<obs conceptId="165482" answerConceptId="1158" answerLabel="Infant NVP/CTX" style="checkbox" class="col-md-2" /> 
+												<obs conceptId="165482" answerConceptId="1158" answerLabel="Infant NVP/CTX" style="checkbox" class="col-md-2" />
 												<obs conceptId="165482" answerConceptId="5271" answerLabel="FP" style="checkbox" class="col-md-1" />
 												<obs conceptId="165482" answerConceptId="5622" id="5622" style="checkbox" answerLabel="Other" class="col-md-1" />
 												<label>Other Specify</label>
@@ -238,9 +236,9 @@
 									</div>
 									<div class="card">
 										<div class="card-header">
-                                            Mode of Care
-                                        </div>
-                                        <div class="card-body">
+											Mode of Care
+										</div>
+										<div class="card-body">
 											<div class="row">
 												<div class="col-md-3">
 													<label>
@@ -252,6 +250,7 @@
 										</div>
 									</div>
 								</section>
+
 							</div>
 							<!-- Tracking Information -->
 							<div class="tab-pane" id="tracking">
